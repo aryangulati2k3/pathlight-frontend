@@ -1,1 +1,4 @@
-pnpm exec lint-staged
+set -e
+
+echo "▶ Running production build before push…"
+pnpm build

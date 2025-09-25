@@ -1,1 +1,3 @@
-pnpm run -s check:all || exit 1
+set -e
+
+pnpm exec lint-staged
