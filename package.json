@@ -3,18 +3,18 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev",
     "build": "next build",
-    "start": "next start",
-    "predev": "pnpm lint && pnpm format",
-    "lint": "eslint .",
-    "lint:fix": "eslint --fix .",
-    "lint:ci": "eslint . --max-warnings=0",
-    "typecheck": "tsc --noEmit -p tsconfig.json",
     "check:all": "pnpm lint:ci && pnpm typecheck",
+    "depcheck": "depcheck",
+    "predev": "pnpm lint && pnpm format",
+    "dev": "next dev",
     "format": "prettier --write \"**/*.{ts,tsx}\"",
+    "lint": "eslint .",
+    "lint:ci": "eslint . --max-warnings=0",
+    "lint:fix": "eslint --fix .",
     "prepare": "husky",
-    "depcheck": "depcheck"
+    "start": "next start",
+    "typecheck": "tsc --noEmit -p tsconfig.json"
   },
   "lint-staged": {
     "*.{ts,tsx,js,jsx}": [
@@ -41,6 +41,10 @@
     "eslint-config-next": "15.5.4",
     "husky": "^9.1.7",
     "lint-staged": "^16.2.1",
+    "prettier": "^3.6.2",
+    "prettier-plugin-organize-imports": "^4.3.0",
+    "prettier-plugin-packagejson": "^2.5.19",
+    "prettier-plugin-tailwindcss": "^0.6.14",
     "tailwindcss": "^4",
     "typescript": "^5"
   }
