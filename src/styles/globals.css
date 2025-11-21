@@ -119,40 +119,85 @@
   }
 }
 
-@layer components {
+/* Semantic, responsive typography */
+@layer utilities {
+  /* Logo text (dedicated, not tied to headings) */
+  .text-logo {
+    @apply text-lg font-semibold tracking-tight md:text-xl;
+  }
+
+  /* Display (for hero sections, rarely used) */
+  .text-display {
+    @apply text-3xl font-bold tracking-tight md:text-4xl lg:text-5xl;
+  }
+
+  /* Primary nav links (desktop header) */
+  .text-nav {
+    @apply text-foreground text-sm font-medium md:text-base;
+  }
+
+  /* Dropdown item text (mega/menus) */
+  .text-nav-sub {
+    @apply text-foreground text-sm leading-6 md:text-base;
+  }
+
   /* Headings */
   .text-heading-1 {
-    @apply text-foreground text-3xl leading-tight font-bold tracking-tight md:text-4xl;
+    @apply text-2xl font-bold tracking-tight md:text-3xl lg:text-4xl;
   }
   .text-heading-2 {
-    @apply text-foreground text-2xl leading-tight font-semibold tracking-tight md:text-3xl;
+    @apply text-xl font-semibold tracking-tight md:text-2xl lg:text-3xl;
   }
   .text-heading-3 {
-    @apply text-foreground text-xl leading-snug font-semibold tracking-tight md:text-2xl;
+    @apply text-lg font-medium tracking-tight md:text-xl;
   }
   .text-heading-4 {
-    @apply text-foreground text-lg leading-snug font-medium md:text-xl;
+    @apply text-base font-medium tracking-tight md:text-lg;
   }
 
-  /* Brand / decorative */
-  .text-logo {
-    @apply text-foreground text-base leading-tight font-bold italic md:text-lg;
-  }
-
-  /* Body & UI text */
-  .text-body {
-    @apply text-foreground text-sm leading-relaxed font-normal md:text-base;
-  }
-  .text-muted {
-    @apply text-muted-foreground text-sm leading-relaxed;
-  }
-  .text-caption {
-    @apply text-muted-foreground text-xs leading-relaxed md:text-sm;
+  /* Titles / Labels */
+  .text-title {
+    @apply text-lg leading-7 font-medium md:text-xl;
   }
   .text-subtitle {
-    @apply text-muted-foreground text-base leading-snug font-medium md:text-lg;
+    @apply text-muted-foreground text-base md:text-lg;
+  }
+  .text-overline {
+    @apply text-muted-foreground text-xs tracking-wider uppercase md:text-sm;
+  }
+  .text-caption {
+    @apply text-foreground text-xs md:text-sm;
   }
   .text-label {
-    @apply text-foreground text-sm leading-snug font-medium;
+    @apply text-sm font-medium md:text-base;
+  }
+
+  /* Body text */
+  .text-body-lg {
+    @apply text-lg leading-8 md:text-xl;
+  }
+  .text-body {
+    @apply text-foreground text-base leading-7;
+  }
+  .text-body-sm {
+    @apply text-foreground text-sm leading-6 md:text-base;
+  }
+  .text-muted {
+    @apply text-muted-foreground text-sm md:text-base;
+  }
+
+  /* Links & interactive text */
+  .text-link {
+    @apply underline decoration-from-font underline-offset-4 hover:no-underline;
+  }
+
+  /* Code/mono */
+  .text-code {
+    @apply font-mono text-sm;
+  }
+
+  /* Utility: clamp long titles */
+  .text-1line {
+    @apply truncate;
   }
 }
