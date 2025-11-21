@@ -1,6 +1,10 @@
+// src/app/layout.tsx
 import "@/styles/globals.css";
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
+
+import { SiteFooter } from "@/components/layout/site-footer";
+import { SiteHeader } from "@/components/layout/site-header";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -12,11 +16,36 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
+const navLinks = [
+  { label: "Home", href: "/" },
+  { label: "About", href: "/about" },
+  { label: "Programs", href: "/programs" },
+  { label: "Publications", href: "/publications" },
+];
+
+const footerColumns = [
+  {
+    heading: "Pages",
+    links: [
+      { label: "About", href: "/about" },
+      { label: "Programs", href: "/programs" },
+      { label: "Contact", href: "/contact" },
+    ],
+  },
+  {
+    heading: "Resources",
+    links: [
+      { label: "Publications", href: "/publications" },
+      { label: "Events", href: "/events" },
+    ],
+  },
+];
+
 export const metadata: Metadata = {
-  title: "Vendora",
-  description: "A dummy ecommerce website's admin panel built with Next.js",
+  title: "Next.js Template",
+  description: "A Next.js 16 template for scaffolding websites faster.",
   appleWebApp: {
-    title: "Vendora",
+    title: "Next.js Template",
   },
 };
 
@@ -27,7 +56,28 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>{children}</body>
+      <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
+        <div className="flex min-h-screen flex-col">
+          <SiteHeader
+            logoText="Template"
+            navLinks={navLinks}
+            ctaLabel="Contact us"
+            ctaHref="/contact"
+          />
+
+          <div className="flex-1">{children}</div>
+
+          <SiteFooter
+            brandName="Template"
+            email="hello@template.example"
+            columns={footerColumns}
+            socials={{
+              github: "https://github.com/your-org",
+              linkedin: "https://www.linkedin.com/company/your-org",
+            }}
+          />
+        </div>
+      </body>
     </html>
   );
 }
