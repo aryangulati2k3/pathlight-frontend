@@ -1,5 +1,5 @@
-/** @type {import("prettier").Config} */
-export default {
+// prettier.config.mjs
+const prettierConfig = {
   printWidth: 100,
   singleQuote: false,
   semi: true,
@@ -10,3 +10,5 @@ export default {
     "prettier-plugin-organize-imports",
   ],
 };
+
+export default prettierConfig;
