@@ -1,7 +1,8 @@
 // src/components/blocks/article-grid.tsx
 import { Section } from "@/components/layout/section";
 import { SectionHeader } from "@/components/layout/section-header";
-import { ArticleCard, type ArticleCardProps } from "./article-card";
+import type { ArticleCardProps } from "./article-card";
+import { ArticleCard } from "./article-card";
 
 export interface ArticleGridProps {
   id?: string;
@@ -30,3 +31,5 @@ export function ArticleGrid({ id, eyebrow, title, subtitle, articles }: ArticleG
     </Section>
   );
 }
+
+export type { ArticleCardProps };
