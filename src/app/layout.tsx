@@ -42,10 +42,10 @@ const footerColumns = [
 ];
 
 export const metadata: Metadata = {
-  title: "Next.js Template",
-  description: "A Next.js 16 template for scaffolding websites faster.",
+  title: "Pathlight Clinic",
+  description: "Structured support for neurodivergent children and their families.",
   appleWebApp: {
-    title: "Next.js Template",
+    title: "Pathlight Clinic",
   },
 };
 
@@ -59,7 +59,7 @@ export default function RootLayout({
       <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
         <div className="flex min-h-screen flex-col">
           <SiteHeader
-            logoText="Template"
+            logoText="Pathlight Clinic"
             navLinks={navLinks}
             ctaLabel="Contact us"
             ctaHref="/contact"
@@ -68,7 +68,7 @@ export default function RootLayout({
           <div className="flex-1">{children}</div>
 
           <SiteFooter
-            brandName="Template"
+            brandName="Pathlight Clinic"
             email="hello@template.example"
             columns={footerColumns}
             socials={{
