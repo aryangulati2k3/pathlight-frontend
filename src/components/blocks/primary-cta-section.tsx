@@ -35,12 +35,13 @@ export function PrimaryCtaSection({
           <h2 className="text-heading-2">{title}</h2>
           {subtitle ? <p className="text-muted">{subtitle}</p> : null}
         </div>
-        <div className="flex flex-wrap gap-3">
-          <Button asChild size="lg">
+        <div className="grid w-full gap-3 sm:grid-cols-1 md:w-1/2 p-2">
+          <Button asChild size="lg" className="w-full">
             <Link href={primaryCtaHref}>{primaryCtaLabel}</Link>
           </Button>
+
           {secondaryCtaHref && secondaryCtaLabel ? (
-            <Button asChild variant="outline" size="lg">
+            <Button asChild variant="outline" size="lg" className="w-full">
               <Link href={secondaryCtaHref}>{secondaryCtaLabel}</Link>
             </Button>
           ) : null}
