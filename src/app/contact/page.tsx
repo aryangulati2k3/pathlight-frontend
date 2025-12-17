@@ -4,9 +4,9 @@ import { ContactInfoPanel } from "@/components/contact/contact-info-panel";
 import { Section } from "@/components/layout/section";
 
 export const metadata = {
-  title: "Contact – Vendora Template",
+  title: "Contact – Pathlight Clinic",
   description:
-    "Get in touch about projects, collaborations, or enquiries related to the Vendora Next.js template.",
+    "Contact Pathlight Clinic for ABA therapy enquiries, insurance questions, and client support.",
 };
 
 export default function ContactPage() {
@@ -17,10 +17,26 @@ export default function ContactPage() {
           <ContactForm />
 
           <ContactInfoPanel
-            addressLines={["123 Template Street", "Sector 42, New Delhi", "India"]}
-            phone="+91 98765 43210"
-            email="hello@vendora.example"
-            officeHours={["Monday – Friday: 10:00 AM – 6:00 PM IST", "Closed on public holidays"]}
+            title="Get in touch"
+            description="We’re here to answer questions and guide you through next steps."
+            addressLines={["479 Montgomery Place", "Altamonte Springs, FL 32714"]}
+            phone="(407) 942-8294"
+            fax="(407) 942-8292"
+            emails={[
+              {
+                label: "General Enquiries",
+                value: "info@pathlighttherapy.com",
+              },
+              {
+                label: "Billing & Insurance",
+                value: "billing@pathlighttherapy.com",
+              },
+              {
+                label: "Client & Tech Support",
+                value: "support@pathlighttherapy.com",
+              },
+            ]}
+            officeHours={["Coming soon", "In-home and school-based therapy"]}
           />
         </div>
       </Section>
