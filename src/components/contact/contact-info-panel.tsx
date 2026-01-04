@@ -27,6 +27,9 @@ export interface ContactInfoPanelProps {
   email?: string;
   emailLabel?: string;
 
+  registeredEntity?: string;
+  registeredEntityLabel?: string;
+
   officeHours?: string[];
 }
 
@@ -47,6 +50,9 @@ export function ContactInfoPanel({
 
   email,
   emailLabel = "Email",
+
+  registeredEntity,
+  registeredEntityLabel = "Registered entity",
 
   officeHours,
 }: ContactInfoPanelProps) {
@@ -103,6 +109,13 @@ export function ContactInfoPanel({
               </li>
             ))}
           </ul>
+        </div>
+      ) : null}
+
+      {registeredEntity ? (
+        <div className="space-y-1 text-sm">
+          <p className="text-label">{registeredEntityLabel}</p>
+          <p className="text-muted">{registeredEntity}</p>
         </div>
       ) : null}
 
