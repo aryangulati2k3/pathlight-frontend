@@ -23,20 +23,24 @@ export default function ContactPage() {
             phone="(407) 942-8294"
             fax="(407) 942-8292"
             emails={[
-              // {
-              //   label: "General Enquiries",
-              //   value: "info@pathlighttherapy.com",
-              // },
+              {
+                label: "Contact (website forms)",
+                value: "contact@pathlighttherapy.com",
+              },
               {
                 label: "Billing & Insurance",
                 value: "billing@pathlighttherapy.com",
+              },
+              {
+                label: "General inquiries",
+                value: "info@pathlighttherapy.com",
               },
               {
                 label: "Client & Tech Support",
                 value: "support@pathlighttherapy.com",
               },
             ]}
-            officeHours={["Coming soon", "In-home and school-based therapy"]}
+            registeredEntity="Pathlight Behavioral PLLC"
           />
         </div>
       </Section>
