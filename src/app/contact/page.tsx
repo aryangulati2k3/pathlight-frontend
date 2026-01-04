@@ -23,10 +23,10 @@ export default function ContactPage() {
             phone="(407) 942-8294"
             fax="(407) 942-8292"
             emails={[
-              {
-                label: "General Enquiries",
-                value: "info@pathlighttherapy.com",
-              },
+              // {
+              //   label: "General Enquiries",
+              //   value: "info@pathlighttherapy.com",
+              // },
               {
                 label: "Billing & Insurance",
                 value: "billing@pathlighttherapy.com",
