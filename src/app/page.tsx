@@ -12,9 +12,9 @@ const heroSlides: HeroSlideProps[] = [
   {
     id: "hero-1",
     eyebrow: "Pathlight Clinic",
-    title: "In-home and school-based ABA therapy for ages 2–9.",
+    title: "Compassionate, evidence-based ABA therapy for children.",
     subtitle:
-      "We support neurodivergent children and their families with evidence-based therapy, clear progress pathways, and practical caregiver guidance—delivered where your child learns best.",
+      "At Pathlight Clinic, we provide compassionate, evidence-based ABA therapy designed around each child’s unique strengths and needs. Founded by parents who have walked this journey themselves, we remove barriers, empower families, and deliver individualized care that nurtures confidence, independence, and meaningful progress.",
     primaryCtaLabel: "Start an intake",
     primaryCtaHref: "/contact",
     secondaryCtaLabel: "Explore services",
@@ -25,10 +25,10 @@ const heroSlides: HeroSlideProps[] = [
   },
   {
     id: "hero-2",
-    eyebrow: "Care that meets you where you are",
-    title: "Structured support that builds skills for daily life.",
+    eyebrow: "Clinic-based services (coming soon)",
+    title: "Structured support in a carefully planned environment.",
     subtitle:
-      "Programs focus on communication, social learning, school readiness, and independence—using individualized goals that matter to your family.",
+      "Our clinic-based services in the Orlando area will offer individualized schedules implemented by clinical practitioners, focusing on skill acquisition, behavior reduction, and caregiver training.",
     primaryCtaLabel: "Start an intake",
     primaryCtaHref: "/contact",
     secondaryCtaLabel: "Explore services",
@@ -39,10 +39,10 @@ const heroSlides: HeroSlideProps[] = [
   },
   {
     id: "hero-3",
-    eyebrow: "Family-centered approach",
-    title: "Parents are partners in every step.",
+    eyebrow: "Home & community-based services",
+    title: "Therapy that fits real life routines.",
     subtitle:
-      "We provide coaching and support so strategies carry over into home routines and school settings—creating consistent, meaningful progress.",
+      "We teach functional skills in natural environments, focusing on communication, daily living, and school readiness while helping caregivers feel confident implementing strategies.",
     primaryCtaLabel: "Start an intake",
     primaryCtaHref: "/contact",
     secondaryCtaLabel: "Explore services",
@@ -53,10 +53,10 @@ const heroSlides: HeroSlideProps[] = [
   },
   {
     id: "hero-4",
-    eyebrow: "Compassion + evidence",
-    title: "Support rooted in respect, dignity, and science.",
+    eyebrow: "School & virtual services",
+    title: "Consistent care across every setting.",
     subtitle:
-      "We aim for calm, supportive sessions that help children feel safe while learning new skills—without losing sight of what makes each child unique.",
+      "Our team partners with educators and provides virtual support to keep progress moving—whether in the classroom or at home.",
     primaryCtaLabel: "Start an intake",
     primaryCtaHref: "/contact",
     secondaryCtaLabel: "Explore services",
@@ -70,24 +70,27 @@ const heroSlides: HeroSlideProps[] = [
 const features: FeatureItemProps[] = [
   {
     id: "feature-1",
-    title: "Assessment + Functional Behavior Assessment (FBA)",
+    title: "Clinic-based services (coming soon in Orlando)",
     description:
-      "We begin with comprehensive assessment to understand what drives challenging behaviours and how to support meaningful change with clarity and care.",
-    iconName: "database",
+      "Structured, individualized schedules delivered by clinical practitioners. Focused on communication, social skills, play, behavior reduction, and caregiver training—with consistency and peer interaction built in.",
   },
   {
     id: "feature-2",
-    title: "Individualized treatment plans + 1:1 therapy",
+    title: "Home & community-based services",
     description:
-      "Tailored programs and direct one-on-one sessions focused on communication, social skills, school readiness, and daily living skills—built around goals that matter.",
-    iconName: "smartphone",
+      "Natural environment teaching that builds functional communication, daily living skills, school readiness, and behavior management—helping children generalize skills in real-life settings.",
   },
   {
     id: "feature-3",
-    title: "Parent training + school collaboration",
+    title: "School-based services",
     description:
-      "Practical coaching for caregivers and guidance for schools to help strategies generalize across home routines and classroom settings.",
-    iconName: "palette",
+      "Collaboration with educators to integrate ABA strategies into the classroom, supporting verbal behavior, daily living skills, social inclusion, and IEP alignment.",
+  },
+  {
+    id: "feature-4",
+    title: "Virtual services",
+    description:
+      "Flexible sessions delivered via secure video platforms, focused on family guidance, caregiver training, behavior consultation, and continuity of care.",
   },
 ];
 
@@ -161,9 +164,9 @@ export default function HomePage() {
 
       <FeatureGrid
         id="services"
-        eyebrow="Service offerings (ages 2–9)"
-        title="ABA therapy delivered at home and in school settings."
-        subtitle="Pathlight Clinic provides in-home and school-based ABA services including assessment (FBA), individualized treatment plans, one-on-one therapy, parent training, school preparedness support, and more."
+        eyebrow="Services"
+        title="Personalized ABA care across clinic, home, school, and virtual settings."
+        subtitle="Our services focus on evidence-based techniques, caregiver partnership, and meaningful skills that support each child’s independence and confidence."
         alignHeader="center"
         features={features}
       />
@@ -178,9 +181,9 @@ export default function HomePage() {
 
       <PrimaryCtaSection
         id="home-intake"
-        eyebrow="Info intake"
+        eyebrow="Start here"
         title="Tell us about your child, and we’ll guide the next steps."
-        subtitle="Share your child’s age (2–9), key concerns, school setting, insurance/payment questions (if any), and your preferred contact method. Our team will follow up with a plan for assessment and services."
+        subtitle="From your first call, we help with insurance guidance, scheduling, and the right service match—so your family feels supported from day one."
         primaryCtaLabel="Start the intake"
         primaryCtaHref="/contact"
         secondaryCtaLabel="Email us"

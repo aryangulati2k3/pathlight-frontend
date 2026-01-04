@@ -18,8 +18,12 @@ const geistMono = Geist_Mono({
 
 const navLinks = [
   { label: "Home", href: "/" },
+  { label: "About", href: "/about" },
   { label: "Our Team", href: "/team" },
   { label: "Services", href: "/services" },
+  { label: "Mission", href: "/mission" },
+  { label: "ABA Techniques", href: "/techniques" },
+  { label: "With You All the Way", href: "/with-you-all-the-way" },
 ];
 
 const footerColumns = [
@@ -27,8 +31,12 @@ const footerColumns = [
     heading: "Pages",
     links: [
       { label: "Home", href: "/" },
+      { label: "About", href: "/about" },
       { label: "Our Team", href: "/team" },
       { label: "Services", href: "/services" },
+      { label: "Mission", href: "/mission" },
+      { label: "ABA Techniques", href: "/techniques" },
+      { label: "With You All the Way", href: "/with-you-all-the-way" },
       { label: "Contact Us", href: "/contact" },
     ],
   },
@@ -69,7 +77,7 @@ export default function RootLayout({
 
           <SiteFooter
             brandName="Pathlight Clinic"
-            email="support@pathlightclinic.com"
+            email="support@pathlighttherapy.com"
             columns={footerColumns}
             socials={{
               github: "https://github.com/your-org",
