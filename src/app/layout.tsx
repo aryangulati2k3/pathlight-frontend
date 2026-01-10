@@ -1,19 +1,21 @@
 // src/app/layout.tsx
 import "@/styles/globals.css";
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Fraunces, Lexend } from "next/font/google";
 
 import { SiteFooter } from "@/components/layout/site-footer";
 import { SiteHeader } from "@/components/layout/site-header";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
+const fontSans = Lexend({
   subsets: ["latin"],
+  variable: "--font-sans",
+  display: "swap",
 });
 
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
+const fontDisplay = Fraunces({
   subsets: ["latin"],
+  variable: "--font-display",
+  display: "swap",
 });
 
 const navLinks = [
@@ -64,7 +66,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
+      <body className={`${fontSans.variable} ${fontDisplay.variable} antialiased`}>
         <div className="flex min-h-screen flex-col">
           <SiteHeader
             logoText="Pathlight Clinic"
