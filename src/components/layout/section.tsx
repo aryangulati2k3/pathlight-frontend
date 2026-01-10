@@ -21,10 +21,7 @@ const variantClasses: Record<SectionVariant, string> = {
  */
 export function Section({ id, variant = "default", className, children }: SectionProps) {
   return (
-    <section
-      id={id}
-      className={`w-full py-12 md:py-16 ${variantClasses[variant]} ${className ?? ""}`}
-    >
+    <section id={id} className={`w-full py-8 ${variantClasses[variant]} ${className ?? ""}`}>
       <div className="mx-auto w-full max-w-6xl px-4 md:px-6">{children}</div>
     </section>
   );
