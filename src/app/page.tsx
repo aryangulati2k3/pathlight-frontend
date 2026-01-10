@@ -73,24 +73,28 @@ const features: FeatureItemProps[] = [
     title: "Clinic-based services (coming soon in Orlando)",
     description:
       "Structured, individualized schedules delivered by clinical practitioners. Focused on communication, social skills, play, behavior reduction, and caregiver training—with consistency and peer interaction built in.",
+    iconName: "sparkles",
   },
   {
     id: "feature-2",
     title: "Home & community-based services",
     description:
       "Natural environment teaching that builds functional communication, daily living skills, school readiness, and behavior management—helping children generalize skills in real-life settings.",
+    iconName: "home",
   },
   {
     id: "feature-3",
     title: "School-based services",
     description:
       "Collaboration with educators to integrate ABA strategies into the classroom, supporting verbal behavior, daily living skills, social inclusion, and IEP alignment.",
+    iconName: "school",
   },
   {
     id: "feature-4",
     title: "Virtual services",
     description:
       "Flexible sessions delivered via secure video platforms, focused on family guidance, caregiver training, behavior consultation, and continuity of care.",
+    iconName: "laptop",
   },
 ];
 

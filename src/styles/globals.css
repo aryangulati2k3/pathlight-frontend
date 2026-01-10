@@ -43,37 +43,57 @@
 
 :root {
   --radius: 0.625rem;
-  --background: oklch(1 0 0);
-  --foreground: oklch(0.145 0 0);
-  --card: oklch(1 0 0);
-  --card-foreground: oklch(0.145 0 0);
-  --popover: oklch(1 0 0);
-  --popover-foreground: oklch(0.145 0 0);
-  --primary: oklch(0.205 0 0);
-  --primary-foreground: oklch(0.985 0 0);
-  --secondary: oklch(0.97 0 0);
-  --secondary-foreground: oklch(0.205 0 0);
-  --muted: oklch(0.97 0 0);
-  --muted-foreground: oklch(0.556 0 0);
-  --accent: oklch(0.97 0 0);
-  --accent-foreground: oklch(0.205 0 0);
-  --destructive: oklch(0.577 0.245 27.325);
-  --border: oklch(0.922 0 0);
-  --input: oklch(0.922 0 0);
-  --ring: oklch(0.708 0 0);
-  --chart-1: oklch(0.646 0.222 41.116);
-  --chart-2: oklch(0.6 0.118 184.704);
-  --chart-3: oklch(0.398 0.07 227.392);
-  --chart-4: oklch(0.828 0.189 84.429);
-  --chart-5: oklch(0.769 0.188 70.08);
-  --sidebar: oklch(0.985 0 0);
-  --sidebar-foreground: oklch(0.145 0 0);
-  --sidebar-primary: oklch(0.205 0 0);
-  --sidebar-primary-foreground: oklch(0.985 0 0);
-  --sidebar-accent: oklch(0.97 0 0);
-  --sidebar-accent-foreground: oklch(0.205 0 0);
-  --sidebar-border: oklch(0.922 0 0);
-  --sidebar-ring: oklch(0.708 0 0);
+
+  /* Warm, calm base surfaces (slight tint instead of pure white) */
+  --background: oklch(100% 0.00011 271.152); /* soft airy blue-tint */
+  --foreground: oklch(0.18 0.02 245);
+
+  --card: oklch(0.995 0.002 200);
+  --card-foreground: oklch(0.18 0.02 245);
+
+  --popover: oklch(0.995 0.002 200);
+  --popover-foreground: oklch(0.18 0.02 245);
+
+  /* Brand primary (calm teal/blue) */
+  --primary: oklch(0.58 0.12 200);
+  --primary-foreground: oklch(0.985 0.01 200);
+
+  /* Secondary: gentle surface */
+  --secondary: oklch(0.96 0.015 200);
+  --secondary-foreground: oklch(0.22 0.02 245);
+
+  /* Muted: readable neutral (still tinted) */
+  --muted: oklch(0.955 0.01 200);
+  --muted-foreground: oklch(0.45 0.03 245);
+
+  /* Accent: warm peach for friendly highlights */
+  --accent: oklch(0.92 0.05 55);
+  --accent-foreground: oklch(0.22 0.02 245);
+
+  --destructive: oklch(0.62 0.2 27);
+
+  --border: oklch(0.9 0.015 200);
+  --input: oklch(0.92 0.012 200);
+
+  /* Focus ring aligned to brand */
+  --ring: oklch(0.58 0.12 200);
+
+  /* Charts (optional) */
+  --chart-1: oklch(0.62 0.14 200);
+  --chart-2: oklch(0.74 0.1 160);
+  --chart-3: oklch(0.7 0.12 55);
+  --chart-4: oklch(0.72 0.14 280);
+  --chart-5: oklch(0.66 0.14 20);
+
+  /* Sidebar (if used) */
+  --sidebar: oklch(0.99 0.007 200);
+  --sidebar-foreground: oklch(0.18 0.02 245);
+  --sidebar-primary: oklch(0.58 0.12 200);
+  --sidebar-primary-foreground: oklch(0.985 0.01 200);
+  --sidebar-accent: oklch(0.94 0.03 55);
+  --sidebar-accent-foreground: oklch(0.22 0.02 245);
+  --sidebar-border: oklch(0.9 0.015 200);
+  --sidebar-ring: oklch(0.58 0.12 200);
 }
 
 .dark {
