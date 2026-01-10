@@ -80,9 +80,9 @@ export function HeroCarousel({ id, slides }: HeroCarouselProps) {
   return (
     <Section id={id} variant="default">
       <Carousel className="w-full" setApi={setApi}>
-        <CarouselContent>
+        <CarouselContent className="items-stretch">
           {slides.map((slide) => (
-            <CarouselItem key={slide.id}>
+            <CarouselItem key={slide.id} className="flex">
               <HeroSlide slide={slide} />
             </CarouselItem>
           ))}
@@ -163,7 +163,7 @@ function HeroSlide({ slide }: HeroSlideComponentProps) {
   const hasCtas = (primaryCtaHref && primaryCtaLabel) || (secondaryCtaHref && secondaryCtaLabel);
 
   return (
-    <div className="relative overflow-hidden rounded-md border border-border/60 bg-card">
+    <div className="relative flex w-full flex-col overflow-hidden rounded-md border border-border/60 bg-card">
       {/* Soft, token-driven glow background */}
       <div aria-hidden className="pointer-events-none absolute inset-0">
         <div className="absolute -left-24 -top-24 h-72 w-72 rounded-full bg-primary/12 blur-3xl" />
@@ -171,7 +171,7 @@ function HeroSlide({ slide }: HeroSlideComponentProps) {
         <div className="absolute inset-0 bg-gradient-to-b from-background/40 via-transparent to-background/60" />
       </div>
 
-      <div className="relative grid gap-10 p-6 md:grid-cols-[minmax(0,1.15fr)_minmax(0,1fr)] md:items-center md:p-10">
+      <div className="relative h-full grid gap-10 p-6 md:grid-cols-[minmax(0,1.15fr)_minmax(0,1fr)] md:items-center md:p-10">
         {/* Left: copy */}
         <div className="space-y-5 md:space-y-7">
           <div className="space-y-3">
@@ -228,7 +228,7 @@ function HeroSlide({ slide }: HeroSlideComponentProps) {
 
         {/* Right: media */}
         <div className="relative">
-          <div className="relative aspect-[4/3] overflow-hidden rounded-md border border-border/60 shadow-sm">
+          <div className="relative aspect-[4/3] w-full overflow-hidden rounded-md border border-border/60 shadow-sm md:aspect-auto md:h-full md:min-h-[360px]">
             {imageUrl ? (
               <>
                 <Image
