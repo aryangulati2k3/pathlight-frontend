@@ -15,6 +15,7 @@ import {
   CarouselNext,
   CarouselPrevious,
 } from "@/components/ui/carousel";
+import { Chip as UiChip } from "@/components/ui/chip";
 
 export interface HeroSlideProps {
   id: string;
@@ -111,7 +112,7 @@ interface HeroSlideComponentProps {
   slide: HeroSlideProps;
 }
 
-type Chip = { label: string; icon: LucideIcon };
+type TrustChipItem = { label: string; icon: LucideIcon };
 
 function HeroSlide({ slide }: HeroSlideComponentProps) {
   const {
@@ -128,15 +129,14 @@ function HeroSlide({ slide }: HeroSlideComponentProps) {
     chips,
   } = slide;
 
-  const trustChips = useMemo<Chip[]>(() => {
+  const trustChips = useMemo<TrustChipItem[]>(() => {
     // If caller provided explicit chips, render them without guessing icons.
     if (chips?.length) {
       return chips.slice(0, 4).map((label) => ({ label, icon: Sparkles }));
     }
 
     // Otherwise: generate sensible, non-committal chips for a pediatric clinic hero.
-    // We intentionally keep these broad so they stay true without requiring backend support.
-    const generated: Chip[] = [
+    const generated: TrustChipItem[] = [
       { label: "Family-first support", icon: HeartHandshake },
       { label: "Clear next steps", icon: Sparkles },
     ];
@@ -156,7 +156,6 @@ function HeroSlide({ slide }: HeroSlideComponentProps) {
       generated.push({ label: "In-home sessions", icon: Home });
     }
 
-    // Keep max 4 chips to avoid visual noise.
     return generated.slice(0, 4);
   }, [badge, chips, title]);
 
@@ -171,7 +170,7 @@ function HeroSlide({ slide }: HeroSlideComponentProps) {
         <div className="absolute inset-0 bg-gradient-to-b from-background/40 via-transparent to-background/60" />
       </div>
 
-      <div className="relative h-full grid gap-10 p-6 md:grid-cols-[minmax(0,1.15fr)_minmax(0,1fr)] md:items-center md:p-10">
+      <div className="relative grid h-full gap-10 p-6 md:grid-cols-[minmax(0,1.15fr)_minmax(0,1fr)] md:items-center md:p-10">
         {/* Left: copy */}
         <div className="space-y-5 md:space-y-7">
           <div className="space-y-3">
@@ -221,7 +220,9 @@ function HeroSlide({ slide }: HeroSlideComponentProps) {
           {/* Trust chips */}
           <div className="flex flex-wrap gap-2">
             {trustChips.map((chip) => (
-              <TrustChip key={chip.label} icon={chip.icon} label={chip.label} />
+              <UiChip key={chip.label} icon={chip.icon} variant="primary" size="sm">
+                {chip.label}
+              </UiChip>
             ))}
           </div>
         </div>
@@ -255,29 +256,13 @@ function HeroSlide({ slide }: HeroSlideComponentProps) {
           {/* Badge chip (top-left) */}
           {badge ? (
             <div className="absolute left-4 top-4">
-              <BadgeChip label={badge} />
+              <UiChip icon={Sparkles} variant="default" size="sm" className="bg-background/70">
+                <span className="text-foreground">{badge}</span>
+              </UiChip>
             </div>
           ) : null}
         </div>
       </div>
-    </div>
-  );
-}
-
-function TrustChip({ icon: Icon, label }: { icon: LucideIcon; label: string }) {
-  return (
-    <div className="inline-flex items-center gap-2 rounded-md border border-border/60 bg-background/60 px-3 py-1 text-caption text-muted-foreground shadow-sm backdrop-blur">
-      <Icon className="h-4 w-4 text-primary/80" aria-hidden />
-      <span>{label}</span>
-    </div>
-  );
-}
-
-function BadgeChip({ label }: { label: string }) {
-  return (
-    <div className="inline-flex items-center gap-2 rounded-md border border-border/60 bg-background/70 px-3 py-1 text-caption shadow-sm backdrop-blur">
-      <Sparkles className="h-4 w-4 text-primary/80" aria-hidden />
-      <span className="text-foreground">{label}</span>
     </div>
   );
 }

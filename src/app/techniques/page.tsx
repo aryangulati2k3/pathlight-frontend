@@ -15,6 +15,7 @@ import Image from "next/image";
 
 import { Section } from "@/components/layout/section";
 import { SectionHeader } from "@/components/layout/section-header";
+import { Chip } from "@/components/ui/chip";
 import { cn } from "@/lib/cn";
 
 export const metadata = {
@@ -254,14 +255,6 @@ function TechniqueCard({ item, index }: { item: TechniqueItem; index: number }) 
         <p className="text-body-sm text-muted-foreground">{item.helps}</p>
       </div>
     </article>
-  );
-}
-
-function Chip({ children }: { children: React.ReactNode }) {
-  return (
-    <span className="inline-flex items-center rounded-md border border-border/60 bg-background/60 px-3 py-1 text-caption text-muted-foreground shadow-sm backdrop-blur">
-      {children}
-    </span>
   );
 }
 

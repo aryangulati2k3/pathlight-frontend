@@ -5,6 +5,7 @@ import Image from "next/image";
 import { TeamSection, type TeamMember } from "@/components/blocks/team-section";
 import { Section } from "@/components/layout/section";
 import { SectionHeader } from "@/components/layout/section-header";
+import { Chip } from "@/components/ui/chip";
 import { cn } from "@/lib/cn";
 
 export const metadata = {
@@ -271,20 +272,5 @@ export default function TeamPage() {
         staff={staff}
       />
     </main>
-  );
-}
-
-function Chip({
-  icon: Icon,
-  children,
-}: {
-  icon: React.ComponentType<{ className?: string }>;
-  children: React.ReactNode;
-}) {
-  return (
-    <span className="inline-flex items-center gap-2 rounded-md border border-border/60 bg-background/60 px-3 py-1 text-caption text-muted-foreground shadow-sm backdrop-blur">
-      <Icon className="h-4 w-4 text-primary/80" aria-hidden />
-      <span>{children}</span>
-    </span>
   );
 }
