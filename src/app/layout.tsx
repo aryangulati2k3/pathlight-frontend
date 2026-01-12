@@ -30,23 +30,26 @@ const navLinks = [
 
 const footerColumns = [
   {
-    heading: "Pages",
+    heading: "Explore",
     links: [
       { label: "Home", href: "/" },
       { label: "About", href: "/about" },
       { label: "Our Team", href: "/team" },
-      { label: "Services", href: "/services" },
-      { label: "Mission", href: "/mission" },
-      { label: "ABA Techniques", href: "/techniques" },
-      { label: "With You All the Way", href: "/with-you-all-the-way" },
       { label: "Contact Us", href: "/contact" },
     ],
   },
   {
-    heading: "Resources",
+    heading: "Services & Care",
     links: [
-      { label: "Publications", href: "#" },
-      { label: "Events", href: "#" },
+      { label: "Services", href: "/services" },
+      { label: "With You All the Way", href: "/with-you-all-the-way" },
+    ],
+  },
+  {
+    heading: "Our Approach",
+    links: [
+      { label: "Mission", href: "/mission" },
+      { label: "ABA Techniques", href: "/techniques" },
     ],
   },
 ];
