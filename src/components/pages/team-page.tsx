@@ -1,4 +1,4 @@
-// src/app/team/page.tsx
+// src/components/pages/team-page.tsx
 import { HeartHandshake, MapPin, Quote, ShieldCheck, Sparkles, Users } from "lucide-react";
 import Image from "next/image";
 
@@ -7,12 +7,6 @@ import { Section } from "@/components/layout/section";
 import { SectionHeader } from "@/components/layout/section-header";
 import { Chip } from "@/components/ui/chip";
 import { cn } from "@/lib/cn";
-
-export const metadata = {
-  title: "Our Team – Pathlight Clinic",
-  description:
-    "Meet the Pathlight Clinic leadership team and the professionals supporting children and families through ABA services.",
-};
 
 const founders: TeamMember[] = [
   {
@@ -83,7 +77,7 @@ const storyBlocks = [
   },
 ];
 
-export default function TeamPage() {
+export function TeamPageContent() {
   return (
     <main>
       {/* Hero + story intro */}

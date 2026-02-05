@@ -20,8 +20,6 @@ const fontDisplay = Fraunces({
 
 const navLinks = [
   { label: "Home", href: "/" },
-  { label: "About", href: "/about" },
-  { label: "Our Team", href: "/team" },
   { label: "Services", href: "/services" },
   { label: "Mission", href: "/mission" },
   { label: "ABA Techniques", href: "/techniques" },
@@ -33,8 +31,6 @@ const footerColumns = [
     heading: "Explore",
     links: [
       { label: "Home", href: "/" },
-      { label: "About", href: "/about" },
-      { label: "Our Team", href: "/team" },
       { label: "Contact Us", href: "/contact" },
     ],
   },

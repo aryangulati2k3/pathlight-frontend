@@ -1,69 +1,27 @@
 // src/app/page.tsx
 import { ArticleGrid, type ArticleCardProps } from "@/components/blocks/article-grid";
 import { FeatureGrid, type FeatureItemProps } from "@/components/blocks/feature-grid";
-import { HeroCarousel, type HeroSlideProps } from "@/components/blocks/hero-carousel";
 import { PrimaryCtaSection } from "@/components/blocks/primary-cta-section";
 import {
   TestimonialsCarousel,
   type TestimonialItem,
 } from "@/components/blocks/testimonials-carousel";
+import Image from "next/image";
 
-const heroSlides: HeroSlideProps[] = [
+const heroSlides = [
   {
     id: "hero-1",
     eyebrow: "Pathlight Clinic",
-    title: "Compassionate, evidence-based ABA therapy for children.",
+    title: "Lighting the path to every child’s potential",
     subtitle:
-      "At Pathlight Clinic, we provide compassionate, evidence-based ABA therapy designed around each child’s unique strengths and needs. Founded by parents who have walked this journey themselves, we remove barriers, empower families, and deliver individualized care that nurtures confidence, independence, and meaningful progress.",
+      "At Pathlight Clinic, we provide compassionate, evidence based ABA therapy designed around each child’s unique strengths and needs.",
     primaryCtaLabel: "Start an intake",
     primaryCtaHref: "/contact",
     secondaryCtaLabel: "Explore services",
     secondaryCtaHref: "#services",
-    imageUrl: "https://images.pexels.com/photos/8618003/pexels-photo-8618003.jpeg",
+    imageUrl: "https://images.pexels.com/photos/8923042/pexels-photo-8923042.jpeg",
     imageAlt: "Therapist supporting a child during a learning activity",
     badge: "In-home • School-based • Telehealth available",
-  },
-  {
-    id: "hero-2",
-    eyebrow: "Clinic-based services (coming soon)",
-    title: "Structured support in a carefully planned environment.",
-    subtitle:
-      "Our clinic-based services in the Orlando area will offer individualized schedules implemented by clinical practitioners, focusing on skill acquisition, behavior reduction, and caregiver training.",
-    primaryCtaLabel: "Start an intake",
-    primaryCtaHref: "/contact",
-    secondaryCtaLabel: "Explore services",
-    secondaryCtaHref: "#services",
-    imageUrl: "https://images.pexels.com/photos/3662630/pexels-photo-3662630.jpeg",
-    imageAlt: "Parent and child working together at a table",
-    badge: "Individualized plans • Measurable progress",
-  },
-  {
-    id: "hero-3",
-    eyebrow: "Home & community-based services",
-    title: "Therapy that fits real life routines.",
-    subtitle:
-      "We teach functional skills in natural environments, focusing on communication, daily living, and school readiness while helping caregivers feel confident implementing strategies.",
-    primaryCtaLabel: "Start an intake",
-    primaryCtaHref: "/contact",
-    secondaryCtaLabel: "Explore services",
-    secondaryCtaHref: "#services",
-    imageUrl: "https://images.pexels.com/photos/8617981/pexels-photo-8617981.jpeg",
-    imageAlt: "Therapist speaking with a parent about a child's support plan",
-    badge: "Parent training • School collaboration",
-  },
-  {
-    id: "hero-4",
-    eyebrow: "School & virtual services",
-    title: "Consistent care across every setting.",
-    subtitle:
-      "Our team partners with educators and provides virtual support to keep progress moving—whether in the classroom or at home.",
-    primaryCtaLabel: "Start an intake",
-    primaryCtaHref: "/contact",
-    secondaryCtaLabel: "Explore services",
-    secondaryCtaHref: "#services",
-    imageUrl: "https://images.pexels.com/photos/8439093/pexels-photo-8439093.jpeg",
-    imageAlt: "Family walking together outdoors",
-    badge: "Neuroaffirming • Child-led • Strength-based",
   },
 ];
 
@@ -162,9 +120,31 @@ const testimonials: TestimonialItem[] = [
 ];
 
 export default function HomePage() {
+  const hero = heroSlides[0];
+
   return (
     <main>
-      <HeroCarousel id="home-hero" slides={heroSlides} />
+      <section id="home-hero" className="relative h-[75vh] overflow-hidden bg-muted">
+        <Image
+          src={hero.imageUrl}
+          alt={hero.imageAlt}
+          fill
+          priority
+          sizes="100vw"
+          className="object-cover"
+        />
+        <div
+          aria-hidden
+          className="absolute inset-0 bg-gradient-to-r from-background/95 via-background/60 to-transparent"
+        />
+        <div className="relative mx-auto flex h-full max-w-6xl items-center px-4 py-16 md:px-6">
+          <div className="max-w-2xl space-y-4">
+            <p className="text-overline text-muted-foreground">{hero.eyebrow}</p>
+            <h1 className="text-heading-1">{hero.title}</h1>
+            <p className="text-body text-muted-foreground">{hero.subtitle}</p>
+          </div>
+        </div>
+      </section>
 
       <FeatureGrid
         id="services"

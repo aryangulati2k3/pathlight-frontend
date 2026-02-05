@@ -1,16 +1,10 @@
-// src/app/about/page.tsx
+// src/components/pages/about-page.tsx
 import { HeartHandshake, ShieldCheck, Sparkles, Users } from "lucide-react";
 import Image from "next/image";
 
 import { Section } from "@/components/layout/section";
 import { SectionHeader } from "@/components/layout/section-header";
 import { Chip } from "@/components/ui/chip";
-
-export const metadata = {
-  title: "About Us – Pathlight Clinic",
-  description:
-    "Learn about Pathlight Clinic’s origins, values, and commitment to compassionate, evidence-based ABA care.",
-};
 
 const storyParagraphs = [
   "Our story began in India, when our only child was first diagnosed with autism. At the time, resources were limited and evidence-based therapies like ABA were not widely accessible. As parents, we searched tirelessly for guidance, support, and effective interventions. That journey taught us the profound importance of advocacy, education, and access to quality care.",
@@ -68,7 +62,7 @@ const values = [
   },
 ];
 
-export default function AboutPage() {
+export function AboutPageContent() {
   return (
     <main>
       {/* Hero */}
