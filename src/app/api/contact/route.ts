@@ -43,7 +43,9 @@ export async function POST(req: Request) {
         { ok: false, error: "Too many requests. Please try again shortly." },
         {
           status: 429,
-          headers: { "retry-after": String(Math.ceil((rl.retryAfterMs ?? 0) / 1000)) },
+          headers: {
+            "retry-after": String(Math.ceil((rl.retryAfterMs ?? 0) / 1000)),
+          },
         },
       );
     }
@@ -68,10 +70,10 @@ export async function POST(req: Request) {
     const eName = process.env.GOOGLE_FORMS_ENTRY_NAME;
     const eEmail = process.env.GOOGLE_FORMS_ENTRY_EMAIL;
     const ePhone = process.env.GOOGLE_FORMS_ENTRY_PHONE;
-    const eTopic = process.env.GOOGLE_FORMS_ENTRY_TOPIC;
+    const eZipcode = process.env.GOOGLE_FORMS_ENTRY_ZIPCODE;
     const eMessage = process.env.GOOGLE_FORMS_ENTRY_MESSAGE;
 
-    if (!formId || !eName || !eEmail || !ePhone || !eTopic || !eMessage) {
+    if (!formId || !eName || !eEmail || !ePhone || !eZipcode || !eMessage) {
       return NextResponse.json(
         { ok: false, error: "Contact form is not configured on the server." },
         { status: 500 },
@@ -84,12 +86,14 @@ export async function POST(req: Request) {
     body.set(eName, parsed.data.name);
     body.set(eEmail, parsed.data.email);
     body.set(ePhone, parsed.data.phone ?? "");
-    body.set(eTopic, parsed.data.topic ?? "");
+    body.set(eZipcode, parsed.data.zipcode ?? "");
     body.set(eMessage, parsed.data.message);
 
     const googleRes = await fetch(url, {
       method: "POST",
-      headers: { "content-type": "application/x-www-form-urlencoded;charset=UTF-8" },
+      headers: {
+        "content-type": "application/x-www-form-urlencoded;charset=UTF-8",
+      },
       body,
       redirect: "manual",
     });

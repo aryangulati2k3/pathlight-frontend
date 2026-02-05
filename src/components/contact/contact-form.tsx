@@ -25,7 +25,7 @@ export function ContactForm({
       name: "",
       email: "",
       phone: "",
-      topic: "",
+      zipcode: "",
       message: "",
       website: "",
     },
@@ -113,28 +113,31 @@ export function ContactForm({
             <Input
               id="phone"
               type="tel"
-              autoComplete="tel"
-              placeholder="+91 98765 43210"
+              autoComplete="tel-national"
+              placeholder="(415) 555-2671"
               aria-invalid={!!errors.phone}
               {...register("phone")}
             />
+
             {errors.phone ? (
               <p className="text-caption text-destructive">{errors.phone.message}</p>
             ) : null}
           </div>
 
           <div className="space-y-1.5">
-            <label htmlFor="topic" className="text-label">
-              Topic
+            <label htmlFor="zipcode" className="text-label">
+              Zipcode
             </label>
             <Input
-              id="topic"
-              placeholder="Project enquiry, collaboration, etc."
-              aria-invalid={!!errors.topic}
-              {...register("topic")}
+              id="zipcode"
+              autoComplete="postal-code"
+              placeholder="e.g. 90210 or 90210-1234"
+              aria-invalid={!!errors.zipcode}
+              {...register("zipcode")}
             />
-            {errors.topic ? (
-              <p className="text-caption text-destructive">{errors.topic.message}</p>
+
+            {errors.zipcode ? (
+              <p className="text-caption text-destructive">{errors.zipcode.message}</p>
             ) : null}
           </div>
         </div>
