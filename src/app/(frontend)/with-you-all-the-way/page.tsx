@@ -1,18 +1,12 @@
 // src/app/with-you-all-the-way/page.tsx
-import {
-  CalendarCheck,
-  ClipboardList,
-  FileCheck2,
-  HandHeart,
-  ShieldCheck,
-  Sparkles,
-} from "lucide-react";
+import { Sparkles } from "lucide-react";
 import Image from "next/image";
 
+import type { Step } from "@/components/blocks/with-you-timeline";
+import { WithYouTimeline } from "@/components/blocks/with-you-timeline";
 import { Section } from "@/components/layout/section";
 import { SectionHeader } from "@/components/layout/section-header";
 import { Chip } from "@/components/ui/chip";
-import { cn } from "@/lib/cn";
 
 export const metadata = {
   title: "With You All the Way – Pathlight Clinic",
@@ -20,14 +14,14 @@ export const metadata = {
     "Explore Pathlight Clinic’s step-by-step care journey from intake to ongoing support.",
 };
 
-const careSteps = [
+const careSteps: Step[] = [
   {
     id: "step-1",
     title: "Quick Start",
     subtitle: "Enrollment & Insurance Guidance",
     description:
       "At Pathlight Clinic, we make your first steps simple and supportive. From your initial call, our team verifies your information and insurance coverage, then takes time to understand your family’s needs. This helps us match your child with the therapist who will be the best fit for your family.",
-    Icon: CalendarCheck,
+    iconKey: "calendar",
   },
   {
     id: "step-2",
@@ -35,7 +29,7 @@ const careSteps = [
     subtitle: "Understanding Your Child’s Unique Profile",
     description:
       "A Pathlight Clinic BCBA creates an individualized treatment plan utilizing empirical behavior assessment tools and also includes direct observations across settings and a detailed parent interview. Your insight matters. Together, we build a complete picture of your child’s strengths, challenges, and priorities.",
-    Icon: ClipboardList,
+    iconKey: "clipboard",
   },
   {
     id: "step-3",
@@ -43,7 +37,7 @@ const careSteps = [
     subtitle: "A Targeted Path for Growth",
     description:
       "Using the assessment results, your Pathlight BCBA designs a personalized treatment plan tailored to your child’s developmental goals. This roadmap focuses on communication, social skills, behavior support, and independence. Your BCBA guides the therapy team closely, adjusting strategies as your child grows.",
-    Icon: Sparkles,
+    iconKey: "sparkles",
   },
   {
     id: "step-4",
@@ -51,7 +45,7 @@ const careSteps = [
     subtitle: "Securing Coverage for Services",
     description:
       "Pathlight Clinic handles the paperwork and submits your child’s care plan for insurance authorization. Our team is experienced in navigating approvals and works diligently to minimize delays. You’ll stay informed at every step.",
-    Icon: ShieldCheck,
+    iconKey: "shield",
   },
   {
     id: "step-5",
@@ -59,7 +53,7 @@ const careSteps = [
     subtitle: "Collaborative, Compassionate Therapy",
     description:
       "Your child begins therapy with a behavior technician under the supervision of your Pathlight BCBA. We believe in partnership—your child, your family, and our team working together toward meaningful milestones. Goals are reviewed and updated regularly to reflect your child’s progress.",
-    Icon: HandHeart,
+    iconKey: "heart",
   },
   {
     id: "step-6",
@@ -67,7 +61,7 @@ const careSteps = [
     subtitle: "Scheduling That Fits Your Life",
     description:
       "Life is busy. That’s why Pathlight Clinic provides a dedicated care coordinator to help schedule sessions at times that work best for your family. Our goal is to make therapy accessible, consistent, and stress free.",
-    Icon: FileCheck2,
+    iconKey: "file",
   },
 ];
 
@@ -138,11 +132,7 @@ export default function WithYouAllTheWayPage() {
             </p>
           </div>
 
-          <div className="grid gap-6 md:grid-cols-2">
-            {careSteps.map((step, idx) => (
-              <StepCard key={step.id} step={step} index={idx} />
-            ))}
-          </div>
+          <WithYouTimeline steps={careSteps} />
 
           {/* Reassurance strip */}
           <div className="rounded-md border border-border/60 bg-card/60 p-6 shadow-sm backdrop-blur md:p-8">
@@ -167,53 +157,6 @@ export default function WithYouAllTheWayPage() {
         </div>
       </Section>
     </main>
-  );
-}
-
-function StepCard({ step, index }: { step: (typeof careSteps)[number]; index: number }) {
-  const { title, subtitle, description, Icon } = step;
-
-  const topBar = index % 2 === 0 ? "from-primary/55 to-primary/0" : "from-accent/55 to-accent/0";
-
-  const glow = index % 2 === 0 ? "bg-primary/10" : "bg-accent/12";
-
-  return (
-    <div
-      className={cn(
-        "group relative overflow-hidden rounded-md border border-border/60 bg-card/60 p-5 shadow-sm backdrop-blur md:p-6",
-        "transition-transform duration-200 hover:-translate-y-0.5 hover:shadow-md",
-      )}
-    >
-      {/* Top accent bar */}
-      <div aria-hidden className={cn("absolute inset-x-0 top-0 h-1 bg-gradient-to-r", topBar)} />
-
-      {/* Decorative glow */}
-      <div
-        aria-hidden
-        className={cn(
-          "pointer-events-none absolute -right-14 -bottom-14 h-44 w-44 rounded-full blur-2xl",
-          glow,
-        )}
-      />
-
-      <div className="flex items-start gap-4">
-        {/* Number + Icon stack */}
-        <div className="flex flex-col items-center gap-2">
-          <div className="flex h-10 w-10 items-center justify-center rounded-md border border-border/60 bg-primary/10 text-primary shadow-sm">
-            <Icon className="h-5 w-5" aria-hidden />
-          </div>
-          <span className="text-caption text-muted-foreground">
-            {String(index + 1).padStart(2, "0")}
-          </span>
-        </div>
-
-        <div className="space-y-2">
-          <p className="text-label text-muted-foreground">{title}</p>
-          <h3 className="text-heading-4">{subtitle}</h3>
-          <p className="text-body-sm text-muted-foreground">{description}</p>
-        </div>
-      </div>
-    </div>
   );
 }
 
