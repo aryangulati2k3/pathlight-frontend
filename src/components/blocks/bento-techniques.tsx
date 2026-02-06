@@ -195,8 +195,15 @@ function CreativeCard({
         {isActive ? (
           <p className="mt-2 text-body-sm text-foreground/80">{item.helps}</p>
         ) : (
-          <p className="mt-2 text-body-sm text-foreground/70">Tap to expand.</p>
+          <p className="mt-2 text-body-sm text-foreground/70"></p>
         )}
+      </div>
+
+      <div className="mt-4 flex items-center justify-between text-caption text-foreground/70">
+        <span>{isActive ? "Click to collapse" : "Click to expand"}</span>
+        <span className="rounded-full bg-white/70 px-3 py-1 text-xs font-medium text-foreground">
+          {isActive ? "Expanded" : "Explore"}
+        </span>
       </div>
     </button>
   );
