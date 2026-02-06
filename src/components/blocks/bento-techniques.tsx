@@ -191,7 +191,6 @@ function CreativeCard({
       </div>
 
       <div className="mt-4 flex-1">
-        <p className="text-label text-foreground">How it helps</p>
         {isActive ? (
           <p className="mt-2 text-body-sm text-foreground/80">{item.helps}</p>
         ) : (
