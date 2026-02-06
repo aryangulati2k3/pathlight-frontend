@@ -6,11 +6,13 @@ import { SectionHeader } from "@/components/layout/section-header";
 import { Card, CardContent } from "@/components/ui/card";
 import {
   Carousel,
+  type CarouselApi,
   CarouselContent,
   CarouselItem,
   CarouselNext,
   CarouselPrevious,
 } from "@/components/ui/carousel";
+import * as React from "react";
 
 export type TestimonialItem = {
   id: string;
@@ -38,6 +40,33 @@ export function TestimonialsCarousel({
   alignHeader = "center",
   sectionClassName,
 }: TestimonialsCarouselProps) {
+  const [api, setApi] = React.useState<CarouselApi | null>(null);
+  const [selectedIndex, setSelectedIndex] = React.useState(0);
+  const [scrollSnaps, setScrollSnaps] = React.useState<number[]>([]);
+
+  const onSelect = React.useCallback((emblaApi: CarouselApi) => {
+    if (!emblaApi) return;
+    setSelectedIndex(emblaApi.selectedScrollSnap());
+  }, []);
+
+  const onReInit = React.useCallback((emblaApi: CarouselApi) => {
+    if (!emblaApi) return;
+    setScrollSnaps(emblaApi.scrollSnapList());
+    setSelectedIndex(emblaApi.selectedScrollSnap());
+  }, []);
+
+  React.useEffect(() => {
+    if (!api) return;
+    onReInit(api);
+    api.on("select", onSelect);
+    api.on("reInit", onReInit);
+
+    return () => {
+      api.off("select", onSelect);
+      api.off("reInit", onReInit);
+    };
+  }, [api, onReInit, onSelect]);
+
   if (!testimonials.length) return null;
 
   const cardThemes = [
@@ -63,7 +92,7 @@ export function TestimonialsCarousel({
       <div className="space-y-8 md:space-y-10">
         <SectionHeader eyebrow={eyebrow} title={title} subtitle={subtitle} align={alignHeader} />
 
-        <Carousel className="w-full">
+        <Carousel className="w-full" setApi={setApi}>
           <CarouselContent>
             {testimonials.map((t, index) => {
               const theme = cardThemes[index % cardThemes.length];
@@ -99,9 +128,31 @@ export function TestimonialsCarousel({
             })}
           </CarouselContent>
 
-          <div className="mt-4 flex items-center justify-between">
-            <CarouselPrevious />
-            <CarouselNext />
+          <div className="mt-6 flex items-center justify-center gap-4">
+            <CarouselPrevious
+              className="static left-auto right-auto top-auto bottom-auto translate-y-0"
+              aria-label="Previous testimonials"
+            />
+            <div className="flex items-center gap-2">
+              {scrollSnaps.map((_, index) => (
+                <button
+                  key={`testimonial-dot-${index}`}
+                  type="button"
+                  onClick={() => api?.scrollTo(index)}
+                  aria-label={`Go to testimonial ${index + 1}`}
+                  aria-current={index === selectedIndex}
+                  className={`h-2.5 w-2.5 rounded-full transition ${
+                    index === selectedIndex
+                      ? "bg-foreground shadow-[0_0_0_4px_rgba(0,0,0,0.08)]"
+                      : "bg-foreground/25 hover:bg-foreground/50"
+                  }`}
+                />
+              ))}
+            </div>
+            <CarouselNext
+              className="static left-auto right-auto top-auto bottom-auto translate-y-0"
+              aria-label="Next testimonials"
+            />
           </div>
         </Carousel>
       </div>
