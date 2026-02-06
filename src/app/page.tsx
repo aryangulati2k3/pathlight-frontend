@@ -31,28 +31,32 @@ const features: FeatureItemProps[] = [
     title: "Clinic-based services (coming soon in Orlando)",
     description:
       "Structured, individualized schedules delivered by clinical practitioners. Focused on communication, social skills, play, behavior reduction, and caregiver training—with consistency and peer interaction built in.",
-    iconName: "sparkles",
+    imageUrl: "https://images.pexels.com/photos/8923042/pexels-photo-8923042.jpeg",
+    imageAlt: "Therapist supporting a child during a learning activity",
   },
   {
     id: "feature-2",
     title: "Home & community-based services",
     description:
       "Natural environment teaching that builds functional communication, daily living skills, school readiness, and behavior management—helping children generalize skills in real-life settings.",
-    iconName: "home",
+    imageUrl: "https://images.pexels.com/photos/3662630/pexels-photo-3662630.jpeg",
+    imageAlt: "Parent and child working together at a table",
   },
   {
     id: "feature-3",
     title: "School-based services",
     description:
       "Collaboration with educators to integrate ABA strategies into the classroom, supporting verbal behavior, daily living skills, social inclusion, and IEP alignment.",
-    iconName: "school",
+    imageUrl: "https://images.pexels.com/photos/8617981/pexels-photo-8617981.jpeg",
+    imageAlt: "Therapist talking to a parent in a clinic setting",
   },
   {
     id: "feature-4",
     title: "Virtual services",
     description:
       "Flexible sessions delivered via secure video platforms, focused on family guidance, caregiver training, behavior consultation, and continuity of care.",
-    iconName: "laptop",
+    imageUrl: "https://images.pexels.com/photos/8439093/pexels-photo-8439093.jpeg",
+    imageAlt: "Family walking together toward a building",
   },
 ];
 
@@ -124,7 +128,10 @@ export default function HomePage() {
 
   return (
     <main>
-      <section id="home-hero" className="relative h-[75vh] overflow-hidden bg-muted">
+      <section
+        id="home-hero"
+        className="relative h-[75vh] overflow-hidden bg-gradient-to-br from-rose-50 via-amber-50 to-sky-50"
+      >
         <Image
           src={hero.imageUrl}
           alt={hero.imageAlt}
@@ -135,7 +142,11 @@ export default function HomePage() {
         />
         <div
           aria-hidden
-          className="absolute inset-0 bg-gradient-to-r from-background/95 via-background/60 to-transparent"
+          className="absolute inset-0 bg-gradient-to-r from-white/90 via-white/50 to-transparent"
+        />
+        <div
+          aria-hidden
+          className="absolute inset-0 bg-[radial-gradient(circle_at_top,_rgba(255,255,255,0.85),_transparent_60%)]"
         />
         <div className="relative mx-auto flex h-full max-w-6xl items-center px-4 py-16 md:px-6">
           <div className="max-w-2xl space-y-4">
@@ -161,6 +172,16 @@ export default function HomePage() {
         title="Start with simple, practical guides."
         subtitle="A small library of introductory content—like “ABA Basics” and “Navigating Early Intervention”—to help families understand options and feel less alone in the process."
         articles={articles}
+        sectionClassName="bg-gradient-to-br from-sky-50 via-sky-400/70 to-white"
+      />
+
+      <TestimonialsCarousel
+        id="home-testimonials"
+        eyebrow="Testimonials"
+        title="Support that families can feel."
+        subtitle="Hear from caregivers about their experiences with Pathlight Clinic’s ABA therapy services."
+        testimonials={testimonials}
+        alignHeader="center"
       />
 
       <PrimaryCtaSection
@@ -172,15 +193,7 @@ export default function HomePage() {
         primaryCtaHref="/contact"
         secondaryCtaLabel="Email us"
         secondaryCtaHref="mailto:contact@pathlighttherapy.com"
-      />
-
-      <TestimonialsCarousel
-        id="home-testimonials"
-        eyebrow="Testimonials"
-        title="Support that families can feel."
-        subtitle="Hear from caregivers about their experiences with Pathlight Clinic’s ABA therapy services."
-        testimonials={testimonials}
-        alignHeader="center"
+        sectionClassName="bg-gradient-to-br from-emerald-100 via-emerald-400/70 to-emerald-100"
       />
     </main>
   );

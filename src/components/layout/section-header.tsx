@@ -26,7 +26,9 @@ export function SectionHeader({
         align === "center" ? "max-w-2xl" : ""
       } ${alignment} ${className ?? ""}`}
     >
-      {eyebrow ? <p className="text-caption uppercase tracking-[0.18em]">{eyebrow}</p> : null}
+      {eyebrow ? (
+        <p className="text-caption uppercase tracking-[0.18em] text-primary/80">{eyebrow}</p>
+      ) : null}
       <h2 className="text-heading-2">{title}</h2>
       {subtitle ? <p className="text-muted">{subtitle}</p> : null}
     </header>

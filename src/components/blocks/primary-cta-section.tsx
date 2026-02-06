@@ -12,6 +12,7 @@ export interface PrimaryCtaSectionProps {
   primaryCtaHref: string;
   secondaryCtaLabel?: string;
   secondaryCtaHref?: string;
+  sectionClassName?: string;
 }
 
 /**
@@ -26,10 +27,11 @@ export function PrimaryCtaSection({
   primaryCtaLabel,
   secondaryCtaHref,
   secondaryCtaLabel,
+  sectionClassName,
 }: PrimaryCtaSectionProps) {
   return (
-    <Section id={id} variant="muted">
-      <div className="flex flex-col items-start justify-between gap-4 rounded-md bg-background px-6 py-8 shadow-sm md:flex-row md:items-center md:px-8 md:py-10">
+    <Section id={id} variant="muted" className={sectionClassName}>
+      <div className="flex flex-col items-start justify-between gap-4 rounded-md bg-white/75 px-6 py-8 shadow-sm backdrop-blur-sm md:flex-row md:items-center md:px-8 md:py-10">
         <div className="space-y-2 md:space-y-3">
           {eyebrow ? <p className="text-caption uppercase tracking-[0.18em]">{eyebrow}</p> : null}
           <h2 className="text-heading-2">{title}</h2>

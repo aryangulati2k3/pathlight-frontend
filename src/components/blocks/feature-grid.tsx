@@ -3,23 +3,16 @@ import { Section } from "@/components/layout/section";
 import { SectionHeader } from "@/components/layout/section-header";
 import { Card, CardContent } from "@/components/ui/card";
 import { cn } from "@/lib/cn";
-import {
-  type LucideIcon,
-  Database,
-  HeartHandshake,
-  Home,
-  Laptop,
-  Palette,
-  School,
-  Smartphone,
-  Sparkles,
-} from "lucide-react";
+import { ArrowRight } from "lucide-react";
+import Image from "next/image";
+import Link from "next/link";
 
 export interface FeatureItemProps {
   id: string;
   title: string;
   description: string;
-  iconName?: string;
+  imageUrl?: string;
+  imageAlt?: string;
 }
 
 export interface FeatureGridProps {
@@ -29,6 +22,7 @@ export interface FeatureGridProps {
   subtitle?: string;
   alignHeader?: "left" | "center";
   features: FeatureItemProps[];
+  sectionClassName?: string;
 }
 
 /**
@@ -45,11 +39,12 @@ export function FeatureGrid({
   subtitle,
   alignHeader = "center",
   features,
+  sectionClassName,
 }: FeatureGridProps) {
   if (!features.length) return null;
 
   return (
-    <Section id={id}>
+    <Section id={id} className={sectionClassName}>
       <div className="relative">
         {/* Background shapes */}
         <div aria-hidden className="pointer-events-none absolute inset-0 -z-10 overflow-hidden">
@@ -77,120 +72,77 @@ interface FeatureCardProps {
   index: number;
 }
 
-const iconShellVariants = [
-  "bg-primary/12 text-primary",
-  "bg-accent/16 text-accent-foreground",
-  "bg-muted/60 text-foreground",
-  "bg-primary/10 text-primary",
-];
-
-const topBarVariants = [
-  "from-primary/50 to-primary/0",
-  "from-accent/60 to-accent/0",
-  "from-muted-foreground/35 to-muted-foreground/0",
-  "from-primary/40 to-primary/0",
+const pastelBgVariants = [
+  "from-rose-100/90 via-rose-300/80 to-white/60",
+  "from-sky-100/90 via-sky-300/80 to-white/60",
+  "from-amber-100/90 via-amber-300/80 to-white/60",
+  "from-emerald-100/90 via-emerald-300/80 to-white/60",
 ];
 
 function FeatureCard({ feature, index }: FeatureCardProps) {
-  const shell = iconShellVariants[index % iconShellVariants.length];
-  const bar = topBarVariants[index % topBarVariants.length];
+  const pastel = pastelBgVariants[index % pastelBgVariants.length];
 
   return (
     <Card
       className={cn(
-        "group relative h-full overflow-hidden rounded-md border bg-card/60 shadow-sm backdrop-blur",
+        "group relative h-full overflow-hidden rounded-md border bg-card/60 shadow-sm",
         "transition-transform duration-200 hover:-translate-y-0.5 hover:shadow-md",
         "focus-within:ring-2 focus-within:ring-ring focus-within:ring-offset-2 focus-within:ring-offset-background",
       )}
     >
-      {/* Top accent bar */}
-      <div aria-hidden className={cn("absolute inset-x-0 top-0 h-1 bg-gradient-to-r", bar)} />
+      {/* Background image */}
+      {feature.imageUrl ? (
+        <div
+          aria-hidden
+          className="absolute inset-0 bg-cover bg-center"
+          style={{ backgroundImage: `url(${feature.imageUrl})` }}
+        />
+      ) : null}
 
-      {/* Subtle inner shine */}
+      {/* Pastel wash + readability overlay */}
       <div
         aria-hidden
-        className="pointer-events-none absolute inset-0 opacity-0 transition-opacity duration-200 group-hover:opacity-100"
-      >
-        <div className="absolute -left-24 -top-24 h-56 w-56 rounded-full bg-primary/10 blur-2xl" />
-        <div className="absolute -right-20 -bottom-24 h-60 w-60 rounded-full bg-accent/14 blur-2xl" />
-      </div>
+        className={cn(
+          "absolute inset-0 bg-gradient-to-br",
+          pastel,
+          "opacity-95 transition-opacity duration-200 group-hover:opacity-90",
+        )}
+      />
+      <div
+        aria-hidden
+        className="absolute inset-0 bg-gradient-to-t from-white/90 via-white/50 to-transparent"
+      />
 
-      <CardContent className="relative flex h-full flex-col gap-4 p-5 md:p-6">
-        <div className="flex items-start gap-3">
-          {feature.iconName ? (
-            <div
-              className={cn(
-                "mt-0.5 flex h-10 w-10 items-center justify-center rounded-md border border-border/60",
-                "shadow-sm",
-                shell,
-              )}
-            >
-              <DynamicIcon name={feature.iconName} className="h-5 w-5" />
-            </div>
-          ) : (
-            <div
-              className={cn(
-                "mt-0.5 flex h-10 w-10 items-center justify-center rounded-md border border-border/60",
-                "bg-muted/40 text-muted-foreground",
-              )}
-              aria-hidden
-            >
-              <Sparkles className="h-5 w-5" />
-            </div>
-          )}
-
-          <div className="space-y-1">
-            <h3 className="text-heading-4 leading-snug">{feature.title}</h3>
+      <CardContent className="relative flex h-full flex-col gap-4">
+        {feature.imageUrl ? (
+          <div className="overflow-hidden rounded-md border border-white/60 bg-white/40 shadow-sm">
+            <Image
+              src={feature.imageUrl}
+              alt={feature.imageAlt ?? feature.title}
+              width={400}
+              height={160}
+              className="h-40 w-full object-cover"
+              loading="lazy"
+            />
           </div>
+        ) : null}
+
+        <div className="space-y-1">
+          <h3 className="text-heading-4 leading-snug text-foreground">{feature.title}</h3>
         </div>
 
-        <p className="text-body-sm text-muted-foreground">{feature.description}</p>
+        <p className="text-body-sm text-foreground/80 line-clamp-2">{feature.description}</p>
 
-        {/* Decorative corner shapes */}
-        <div aria-hidden className="pointer-events-none mt-auto">
-          <div className="absolute right-4 top-10 h-12 w-12 rounded-full border border-border/50 bg-background/40 backdrop-blur" />
-          <div className="absolute right-10 top-20 h-6 w-6 rotate-12 rounded-md bg-muted/50" />
+        <div className="mt-auto">
+          <Link
+            href="/services"
+            className="inline-flex items-center gap-2 text-sm font-medium text-foreground/90 transition-colors hover:text-foreground"
+          >
+            Read more
+            <ArrowRight className="h-4 w-4" aria-hidden />
+          </Link>
         </div>
       </CardContent>
     </Card>
   );
-}
-
-interface DynamicIconProps {
-  name: string;
-  className?: string;
-}
-
-/**
- * Keep icons mapped and controlled, so content config can't import arbitrary components.
- * Extend as you add service-specific icons.
- */
-const iconMap: Record<string, LucideIcon> = {
-  database: Database,
-  smartphone: Smartphone,
-  palette: Palette,
-
-  // Service-friendly extras (recommended)
-  heartHandshake: HeartHandshake,
-  home: Home,
-  school: School,
-  laptop: Laptop,
-  sparkles: Sparkles,
-};
-
-function DynamicIcon({ name, className }: DynamicIconProps) {
-  const IconComponent = iconMap[name];
-
-  if (!IconComponent) {
-    return (
-      <div
-        className={cn(
-          "h-5 w-5 rounded-sm border border-dashed border-muted-foreground/40",
-          className,
-        )}
-      />
-    );
-  }
-
-  return <IconComponent className={className} aria-hidden />;
 }

@@ -38,7 +38,7 @@ export function SiteFooter({
 
   return (
     <footer className="border-t bg-background">
-      <div className="mx-auto w-full max-w-6xl px-4 py-10 md:px-6 md:py-12">
+      <div className="mx-auto w-full max-w-7xl px-4 py-10 md:px-6 md:py-12">
         <div className="grid gap-8 md:grid-cols-[minmax(0,1.4fr)_minmax(0,2fr)]">
           {/* Brand + contact */}
           <div className="space-y-4">

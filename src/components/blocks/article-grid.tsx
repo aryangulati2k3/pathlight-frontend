@@ -10,19 +10,27 @@ export interface ArticleGridProps {
   title: string;
   subtitle?: string;
   articles: ArticleCardProps[];
+  sectionClassName?: string;
 }
 
 /**
  * Simple grid wrapper for multiple ArticleCard components.
  */
-export function ArticleGrid({ id, eyebrow, title, subtitle, articles }: ArticleGridProps) {
+export function ArticleGrid({
+  id,
+  eyebrow,
+  title,
+  subtitle,
+  articles,
+  sectionClassName,
+}: ArticleGridProps) {
   if (!articles.length) return null;
 
   return (
-    <Section id={id}>
-      <div className="space-y-8 md:space-y-10">
+    <Section id={id} className={sectionClassName}>
+      <div className="space-y-8 md:space-y-10 ">
         <SectionHeader eyebrow={eyebrow} title={title} subtitle={subtitle} align="left" />
-        <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-4">
+        <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
           {articles.map((article) => (
             <ArticleCard key={article.href} {...article} />
           ))}

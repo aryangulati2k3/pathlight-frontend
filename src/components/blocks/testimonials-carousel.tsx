@@ -26,6 +26,7 @@ export interface TestimonialsCarouselProps {
   subtitle?: string;
   testimonials: TestimonialItem[];
   alignHeader?: "left" | "center";
+  sectionClassName?: string;
 }
 
 export function TestimonialsCarousel({
@@ -35,11 +36,12 @@ export function TestimonialsCarousel({
   subtitle,
   testimonials,
   alignHeader = "center",
+  sectionClassName,
 }: TestimonialsCarouselProps) {
   if (!testimonials.length) return null;
 
   return (
-    <Section id={id} variant="default">
+    <Section id={id} variant="default" className={sectionClassName}>
       <div className="space-y-8 md:space-y-10">
         <SectionHeader eyebrow={eyebrow} title={title} subtitle={subtitle} align={alignHeader} />
 
