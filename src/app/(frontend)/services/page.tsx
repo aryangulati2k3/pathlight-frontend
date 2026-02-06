@@ -28,6 +28,12 @@ const highlights = [
     description:
       "Collaborative support for classroom success and flexible telehealth to keep progress moving between in-person sessions.",
   },
+  {
+    id: "h-4",
+    title: "Virtual Services",
+    description:
+      "Flexible access to care via secure video platforms, focused on family guidance, caregiver training, behavior consultation, and maintaining learned skills between in-person sessions.",
+  },
 ];
 
 const services: ServiceItem[] = [

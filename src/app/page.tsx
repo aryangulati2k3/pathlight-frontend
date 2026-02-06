@@ -62,7 +62,7 @@ const features: FeatureItemProps[] = [
 
 const articles: ArticleCardProps[] = [
   {
-    href: "/techniques",
+    href: "/aba-techniques",
     title: "ABA Basics: Understanding Behavioural Therapy for Children",
     excerpt:
       "A gentle introduction to Applied Behavior Analysis (ABA)—what it is, how it works, and how it can support your child’s communication, independence, and daily routines.",

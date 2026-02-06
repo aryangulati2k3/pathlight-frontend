@@ -1,10 +1,9 @@
 // src/app/mission/page.tsx
-import { HeartHandshake, Quote, ShieldCheck, Sparkles, Users } from "lucide-react";
+import { HeartHandshake, ShieldCheck, Sparkles, Users } from "lucide-react";
 import Image from "next/image";
 
 import { Section } from "@/components/layout/section";
 import { SectionHeader } from "@/components/layout/section-header";
-import { Chip } from "@/components/ui/chip";
 
 export const metadata = {
   title: "Mission – Pathlight Clinic",
@@ -62,20 +61,13 @@ export default function MissionPage() {
                 subtitle="A promise to deliver compassionate, individualized ABA care that empowers families."
                 align="left"
               />
-
-              <div className="flex flex-wrap gap-2">
-                <Chip>Family-first</Chip>
-                <Chip>Clear next steps</Chip>
-                <Chip>Evidence-based</Chip>
-                <Chip>Strength-based</Chip>
-              </div>
             </div>
 
             {/* Visual card */}
             <div className="relative">
-              <div className="relative aspect-[16/11] overflow-hidden rounded-md border border-border/60 bg-card shadow-sm">
+              <div className="relative aspect-[16/10] overflow-hidden rounded-md border border-border/60 bg-card shadow-sm">
                 <Image
-                  src="https://images.pexels.com/photos/8618003/pexels-photo-8618003.jpeg"
+                  src="https://images.pexels.com/photos/8613089/pexels-photo-8613089.jpeg"
                   alt="Therapist supporting a child during a learning activity"
                   fill
                   className="object-cover"
@@ -102,36 +94,6 @@ export default function MissionPage() {
         <div className="grid gap-10 lg:grid-cols-[minmax(0,1.1fr)_minmax(0,0.9fr)] lg:items-start">
           {/* Main content */}
           <div className="space-y-6 text-body text-muted-foreground">
-            <div className="relative overflow-hidden rounded-md border border-border/60 bg-card/60 p-6 shadow-sm backdrop-blur">
-              {/* Decorative glow */}
-              <div aria-hidden className="pointer-events-none absolute inset-0">
-                <div className="absolute -left-16 -top-16 h-56 w-56 rounded-full bg-primary/12 blur-3xl" />
-                <div className="absolute -right-20 -bottom-20 h-64 w-64 rounded-full bg-accent/16 blur-3xl" />
-              </div>
-
-              {/* Top bar */}
-              <div
-                aria-hidden
-                className="absolute inset-x-0 top-0 h-1 bg-gradient-to-r from-primary/55 to-accent/0"
-              />
-
-              <div className="relative space-y-4">
-                <div className="flex items-start gap-3">
-                  <div className="mt-0.5 flex h-10 w-10 items-center justify-center rounded-md border border-border/60 bg-accent/18 text-foreground shadow-sm">
-                    <Quote className="h-5 w-5" aria-hidden />
-                  </div>
-                  <blockquote className="text-heading-3 text-foreground">
-                    “Lighting the path to every child’s potential”
-                  </blockquote>
-                </div>
-
-                <p className="text-body-sm text-muted-foreground">
-                  Our mission is simple: reduce barriers, build confidence, and support meaningful
-                  progress with care that feels human.
-                </p>
-              </div>
-            </div>
-
             {missionParagraphs.map((paragraph) => (
               <p key={paragraph} className="max-w-prose">
                 {paragraph}

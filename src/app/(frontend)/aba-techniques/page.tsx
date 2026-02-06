@@ -1,4 +1,4 @@
-// src/app/techniques/page.tsx
+// src/app/aba-techniques/page.tsx
 import {
   BookOpen,
   Brain,
@@ -148,7 +148,7 @@ export default function TechniquesPage() {
             <div className="relative">
               <div className="relative aspect-[16/11] overflow-hidden rounded-md border border-border/60 bg-card shadow-sm">
                 <Image
-                  src="https://images.pexels.com/photos/8618003/pexels-photo-8618003.jpeg"
+                  src="https://images.pexels.com/photos/5435599/pexels-photo-5435599.jpeg"
                   alt="Therapist supporting a child during a learning activity"
                   fill
                   className="object-cover"

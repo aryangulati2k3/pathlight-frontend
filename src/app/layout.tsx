@@ -36,7 +36,7 @@ const navLinks = [
       {
         heading: "Parents' Resources",
         links: [
-          { label: "ABA Techniques", href: "/techniques" },
+          { label: "ABA Techniques", href: "/aba-techniques" },
           { label: "With You All the Way", href: "/with-you-all-the-way" },
         ],
       },
@@ -63,7 +63,7 @@ const footerColumns = [
     heading: "Our Approach",
     links: [
       { label: "Mission", href: "/mission" },
-      { label: "ABA Techniques", href: "/techniques" },
+      { label: "ABA Techniques", href: "/aba-techniques" },
     ],
   },
 ];
