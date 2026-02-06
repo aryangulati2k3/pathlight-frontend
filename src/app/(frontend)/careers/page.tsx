@@ -110,23 +110,6 @@ export default function CareersPage() {
                   className="absolute inset-0 bg-gradient-to-t from-white/70 via-transparent to-transparent"
                 />
               </div>
-
-              <div className="grid gap-3 md:grid-cols-2">
-                {[
-                  { label: "Joyful progress", tone: "bg-rose-50 border-rose-100" },
-                  { label: "Gentle routines", tone: "bg-amber-50 border-amber-100" },
-                  { label: "Team support", tone: "bg-sky-50 border-sky-100" },
-                  { label: "Growing together", tone: "bg-emerald-50 border-emerald-100" },
-                ].map((item) => (
-                  <div
-                    key={item.label}
-                    className={`flex items-center gap-2 rounded-xl border px-3 py-2 text-caption shadow-sm ${item.tone}`}
-                  >
-                    <span className="h-2.5 w-2.5 rounded-full bg-white" />
-                    <span className="text-foreground">{item.label}</span>
-                  </div>
-                ))}
-              </div>
             </div>
           </div>
         </div>
