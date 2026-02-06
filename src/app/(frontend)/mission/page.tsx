@@ -4,6 +4,7 @@ import Image from "next/image";
 
 import { Section } from "@/components/layout/section";
 import { SectionHeader } from "@/components/layout/section-header";
+import { Chip } from "@/components/ui/chip";
 
 export const metadata = {
   title: "Mission – Pathlight Clinic",
@@ -61,6 +62,13 @@ export default function MissionPage() {
                 subtitle="A promise to deliver compassionate, individualized ABA care that empowers families."
                 align="left"
               />
+
+              <div className="flex flex-wrap gap-2">
+                <Chip>Compassionate care</Chip>
+                <Chip>Evidence-based practice</Chip>
+                <Chip>Family partnership</Chip>
+                <Chip>Confidence & independence</Chip>
+              </div>
             </div>
 
             {/* Visual card */}

@@ -30,6 +30,7 @@ const navLinks = [
     ],
   },
   { label: "Services", href: "/services" },
+  { label: "Careers", href: "/careers" },
   {
     label: "Parents' Resources",
     groups: [

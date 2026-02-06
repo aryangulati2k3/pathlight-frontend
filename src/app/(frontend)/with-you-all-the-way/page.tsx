@@ -98,7 +98,7 @@ export default function WithYouAllTheWayPage() {
             <div className="relative">
               <div className="relative aspect-[16/11] overflow-hidden rounded-md border border-border/60 bg-card shadow-sm">
                 <Image
-                  src="https://images.pexels.com/photos/8617981/pexels-photo-8617981.jpeg"
+                  src="https://images.pexels.com/photos/3933907/pexels-photo-3933907.jpeg"
                   alt="Therapist speaking with a parent about a child’s support plan"
                   fill
                   className="object-cover"
