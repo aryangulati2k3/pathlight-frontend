@@ -57,9 +57,9 @@ export default function CareersPage() {
       <Section>
         <div className="relative overflow-hidden rounded-2xl border border-white/60 bg-white/60 p-6 shadow-sm backdrop-blur md:p-10">
           <div aria-hidden className="pointer-events-none absolute inset-0 -z-10">
-            <div className="absolute -left-16 -top-10 h-48 w-48 rounded-full bg-rose-100 blur-3xl" />
-            <div className="absolute right-6 top-10 h-56 w-56 rounded-full bg-rose-200 blur-3xl" />
-            <div className="absolute bottom-0 left-1/2 h-56 w-56 -translate-x-1/2 rounded-full bg-amber-100 blur-3xl" />
+            <div className="absolute -left-16 -top-10 h-48 w-48 rounded-full bg-sky-200 blur-3xl" />
+            <div className="absolute right-6 top-10 h-56 w-56 rounded-full bg-sky-300 blur-3xl" />
+            <div className="absolute bottom-0 left-1/2 h-56 w-56 -translate-x-1/2 rounded-full bg-amber-200 blur-3xl" />
           </div>
 
           <div className="grid gap-8 md:grid-cols-[minmax(0,1.1fr)_minmax(0,0.9fr)] md:items-center">
@@ -128,19 +128,11 @@ export default function CareersPage() {
             {reasons.map(({ title, description, bullets }) => (
               <div
                 key={title}
-                className="group relative overflow-hidden rounded-2xl border border-rose-100 bg-white/80 p-5 shadow-sm transition-transform duration-200 hover:-translate-y-1"
+                className="group relative overflow-hidden rounded-2xl border border-sky-100 bg-white/80 p-5 shadow-sm transition-transform duration-200 hover:-translate-y-1"
               >
                 <div
                   aria-hidden
-                  className="absolute inset-0 rounded-2xl border border-dashed border-rose-200/70"
-                />
-                <div
-                  aria-hidden
-                  className="absolute right-4 top-4 h-2.5 w-2.5 rounded-full bg-rose-200"
-                />
-                <div
-                  aria-hidden
-                  className="absolute left-4 bottom-4 h-2.5 w-2.5 rounded-full bg-amber-200"
+                  className="absolute inset-0 rounded-2xl border border-dashed border-sky-200/70"
                 />
 
                 <div className="relative space-y-2">
@@ -150,7 +142,7 @@ export default function CareersPage() {
                     <ul className="space-y-1 text-body-sm text-muted-foreground">
                       {bullets.map((bullet) => (
                         <li key={bullet} className="flex items-start gap-2">
-                          <span className="mt-2 h-1.5 w-1.5 rounded-full bg-rose-300" />
+                          <span className="mt-2 h-1.5 w-1.5 rounded-full bg-emerald-300" />
                           <span>{bullet}</span>
                         </li>
                       ))}
@@ -160,7 +152,7 @@ export default function CareersPage() {
 
                 <div
                   aria-hidden
-                  className="pointer-events-none absolute -right-10 -bottom-10 h-28 w-28 rounded-full bg-rose-100/70 blur-2xl"
+                  className="pointer-events-none absolute -right-10 -bottom-10 h-28 w-28 rounded-full bg-sky-100/70 blur-2xl"
                 />
               </div>
             ))}
@@ -168,8 +160,8 @@ export default function CareersPage() {
         </div>
       </Section>
 
-      <Section className="bg-gradient-to-r from-rose-50 via-rose-100 to-amber-50">
-        <div className="relative grid gap-8 rounded-2xl border border-white/70 bg-white/70 p-6 shadow-sm backdrop-blur md:grid-cols-[minmax(0,1fr)_minmax(0,0.9fr)] md:items-center md:p-10">
+      <Section>
+        <div className="relative grid gap-8 rounded-2xl border border-white/70 bg-gradient-to-r from-rose-100 via-sky-100 to-amber-100 p-6 shadow-sm backdrop-blur md:grid-cols-[minmax(0,1fr)_minmax(0,0.9fr)] md:items-center md:p-10">
           <div aria-hidden className="pointer-events-none absolute inset-0 -z-10">
             <div className="absolute -left-8 bottom-0 h-36 w-36 rounded-full  blur-3xl" />
             <div className="absolute right-8 top-4 h-40 w-40 rounded-full blur-3xl" />
