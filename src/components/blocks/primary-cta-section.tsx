@@ -43,7 +43,7 @@ export function PrimaryCtaSection({
           </Button>
 
           {secondaryCtaHref && secondaryCtaLabel ? (
-            <Button asChild variant="outline" size="lg" className="w-full">
+            <Button asChild variant={"outline"} size="lg" className="w-full">
               <Link href={secondaryCtaHref}>{secondaryCtaLabel}</Link>
             </Button>
           ) : null}
