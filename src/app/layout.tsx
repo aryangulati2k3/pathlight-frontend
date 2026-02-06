@@ -20,10 +20,28 @@ const fontDisplay = Fraunces({
 
 const navLinks = [
   { label: "Home", href: "/" },
+  {
+    label: "About Us",
+    groups: [
+      {
+        heading: "About Us",
+        links: [{ label: "Mission", href: "/mission" }],
+      },
+    ],
+  },
   { label: "Services", href: "/services" },
-  { label: "Mission", href: "/mission" },
-  { label: "ABA Techniques", href: "/techniques" },
-  { label: "With You All the Way", href: "/with-you-all-the-way" },
+  {
+    label: "Parents' Resources",
+    groups: [
+      {
+        heading: "Parents' Resources",
+        links: [
+          { label: "ABA Techniques", href: "/techniques" },
+          { label: "With You All the Way", href: "/with-you-all-the-way" },
+        ],
+      },
+    ],
+  },
 ];
 
 const footerColumns = [
