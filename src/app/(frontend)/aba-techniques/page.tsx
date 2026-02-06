@@ -13,10 +13,10 @@ import {
 } from "lucide-react";
 import Image from "next/image";
 
+import { BentoTechniques } from "@/components/blocks/bento-techniques";
 import { Section } from "@/components/layout/section";
 import { SectionHeader } from "@/components/layout/section-header";
 import { Chip } from "@/components/ui/chip";
-import { cn } from "@/lib/cn";
 
 export const metadata = {
   title: "ABA Techniques – Pathlight Clinic",
@@ -173,20 +173,7 @@ export default function TechniquesPage() {
       {/* Content */}
       <Section>
         <div className="space-y-6 md:space-y-8">
-          <div className="rounded-md border border-border/60 bg-card/60 p-5 shadow-sm backdrop-blur md:p-6">
-            <p className="text-label text-foreground">How to read this</p>
-            <p className="text-body-sm text-muted-foreground">
-              Every technique is selected based on your child’s goals, strengths, and daily
-              routines. We’ll explain why we’re using a method and how it supports real-life
-              independence.
-            </p>
-          </div>
-
-          <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
-            {techniques.map((item, idx) => (
-              <TechniqueCard key={item.technique} item={item} index={idx} />
-            ))}
-          </div>
+          <BentoTechniques techniques={techniques} />
 
           {/* Gentle reassurance strip */}
           <div className="rounded-md border border-border/60 bg-background/60 p-6 shadow-sm backdrop-blur md:p-8">
@@ -213,48 +200,6 @@ export default function TechniquesPage() {
         </div>
       </Section>
     </main>
-  );
-}
-
-function TechniqueCard({ item, index }: { item: TechniqueItem; index: number }) {
-  const Icon = iconMap[item.iconKey];
-
-  const topBar = index % 2 === 0 ? "from-primary/55 to-primary/0" : "from-accent/55 to-accent/0";
-
-  const glow = index % 2 === 0 ? "bg-primary/10" : "bg-accent/12";
-
-  return (
-    <article
-      className={cn(
-        "group relative overflow-hidden rounded-md border border-border/60 bg-card/60 p-5 shadow-sm backdrop-blur md:p-6",
-        "transition-transform duration-200 hover:-translate-y-0.5 hover:shadow-md",
-      )}
-    >
-      <div aria-hidden className={cn("absolute inset-x-0 top-0 h-1 bg-gradient-to-r", topBar)} />
-      <div
-        aria-hidden
-        className={cn(
-          "pointer-events-none absolute -right-14 -bottom-14 h-44 w-44 rounded-full blur-2xl",
-          glow,
-        )}
-      />
-
-      <div className="flex items-start gap-3">
-        <div className="mt-0.5 flex h-10 w-10 items-center justify-center rounded-md border border-border/60 bg-primary/10 text-primary shadow-sm">
-          <Icon className="h-5 w-5" aria-hidden />
-        </div>
-
-        <div className="space-y-1">
-          <h3 className="text-heading-4">{item.technique}</h3>
-          <p className="text-caption text-muted-foreground">{item.purpose}</p>
-        </div>
-      </div>
-
-      <div className="mt-4 space-y-2">
-        <p className="text-label text-foreground">How it helps</p>
-        <p className="text-body-sm text-muted-foreground">{item.helps}</p>
-      </div>
-    </article>
   );
 }
 
