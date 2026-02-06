@@ -99,7 +99,7 @@ export default function RootLayout({
             email="support@pathlighttherapy.com"
             columns={footerColumns}
             socials={{
-              github: "https://github.com/your-org",
+              instagram: "https://www.instagram.com/your-org",
               linkedin: "https://www.linkedin.com/company/your-org",
             }}
           />

@@ -62,7 +62,7 @@ const features: FeatureItemProps[] = [
 
 const articles: ArticleCardProps[] = [
   {
-    href: "/resources/aba-basics",
+    href: "/techniques",
     title: "ABA Basics: Understanding Behavioural Therapy for Children",
     excerpt:
       "A gentle introduction to Applied Behavior Analysis (ABA)—what it is, how it works, and how it can support your child’s communication, independence, and daily routines.",
@@ -72,7 +72,7 @@ const articles: ArticleCardProps[] = [
     imageAlt: "Parent and child working together at a table",
   },
   {
-    href: "/resources/navigating-early-intervention",
+    href: "/mission",
     title: "Navigating Early Intervention: Where to Begin",
     excerpt:
       "Feeling overwhelmed by the term “early intervention”? This guide walks parents through what it means, when to seek support, and how to prepare for the first steps.",
@@ -82,7 +82,7 @@ const articles: ArticleCardProps[] = [
     imageAlt: "Therapist talking to a parent in a clinic setting",
   },
   {
-    href: "/resources/preparing-for-your-first-visit",
+    href: "/with-you-all-the-way",
     title: "Preparing for Your First Visit to Pathlight Clinic",
     excerpt:
       "Practical tips on what to expect in your first appointment—what to bring, how sessions are structured, and how to talk to your child about visiting the clinic.",

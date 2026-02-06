@@ -1,5 +1,5 @@
 // src/components/layout/site-footer.tsx
-import { Github, Instagram, Linkedin, Mail } from "lucide-react";
+import { Instagram, Linkedin, Mail } from "lucide-react";
 import Link from "next/link";
 
 export interface FooterLink {
@@ -45,38 +45,13 @@ export function SiteFooter({
             <div>
               <div className="text-logo">{brandName}</div>
               <p className="text-muted mt-2 max-w-sm text-sm">
-                A modern web presence built for clarity, performance and long-term maintainability.
+                Lighting the path to every child’s potential.
               </p>
-            </div>
-
-            <div className="space-y-2 text-sm">
-              {email ? (
-                <p className="text-muted">
-                  <span className="font-medium">Email:</span>{" "}
-                  <a
-                    href={`mailto:${email}`}
-                    className="text-body underline-offset-2 hover:underline"
-                  >
-                    {email}
-                  </a>
-                </p>
-              ) : null}
             </div>
 
             {/* Socials */}
             {socials ? (
               <div className="flex items-center gap-3">
-                {socials.github ? (
-                  <a
-                    href={socials.github}
-                    target="_blank"
-                    rel="noreferrer"
-                    aria-label="GitHub"
-                    className="rounded-md border bg-background p-2 hover:bg-muted"
-                  >
-                    <Github className="h-4 w-4" />
-                  </a>
-                ) : null}
                 {socials.linkedin ? (
                   <a
                     href={socials.linkedin}
