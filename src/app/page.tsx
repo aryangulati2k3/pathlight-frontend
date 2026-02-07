@@ -148,7 +148,7 @@ export default function HomePage() {
           aria-hidden
           className="absolute inset-0 bg-[radial-gradient(circle_at_top,_rgba(255,255,255,0.85),_transparent_60%)]"
         />
-        <div className="relative mx-auto flex h-full max-w-6xl items-center px-4 py-16 md:px-6">
+        <div className="relative mx-auto flex h-full max-w-7xl items-center px-4 py-16 md:px-6">
           <div className="max-w-2xl space-y-4">
             <p className="text-overline text-muted-foreground">{hero.eyebrow}</p>
             <h1 className="text-heading-1">{hero.title}</h1>

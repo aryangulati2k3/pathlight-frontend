@@ -143,6 +143,14 @@ export default function TechniquesPage() {
                 <Chip>Caregiver collaboration</Chip>
                 <Chip>Progress you can track</Chip>
               </div>
+
+              <div className="flex flex-wrap items-center gap-3">
+                <span className="h-3 w-3 rounded-full bg-sky-300" />
+                <span className="h-2.5 w-2.5 rounded-full bg-rose-300" />
+                <span className="h-4 w-4 rounded-full bg-amber-300" />
+                <span className="h-2.5 w-2.5 rounded-full bg-emerald-300" />
+                <div className="h-1 w-16 rounded-full bg-gradient-to-r from-sky-300 via-rose-300 to-amber-300" />
+              </div>
             </div>
 
             <div className="relative">

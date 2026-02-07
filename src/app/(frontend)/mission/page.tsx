@@ -13,9 +13,9 @@ export const metadata = {
 };
 
 const missionParagraphs = [
-  "At Pathlight Clinic, our mission is to brighten the journey for every child with autism by providing evidence-based Applied Behavior Analysis (ABA) delivered with compassion, dedication, and unwavering commitment. We recognize that every child is unique, with their own strengths, challenges, and story. That is why we create individualized treatment plans—one child at a time—ensuring each program is thoughtful, comprehensive, and responsive to their needs.",
-  "We are devoted to blending clinical excellence with genuine care, empowering families through open communication, education, and consistent support. Our goal extends beyond measurable progress; we strive to nurture confidence, independence, and joy throughout every stage of a child’s development.",
-  "At Pathlight Clinic, we stand beside families as partners, helping them navigate the complexities of therapy and systems while keeping the child’s growth at the heart of every decision. Our purpose is simple and steadfast: to deliver high-quality ABA that honors individuality, fosters meaningful growth, and lights the way toward a brighter, more empowered future.",
+  "We brighten the journey for every child with autism through evidence-based ABA delivered with warmth and respect.",
+  "Every plan is individualized—built around strengths, real-life goals, and steady progress.",
+  "We walk beside families with clear guidance, collaboration, and care that supports confidence and independence.",
 ];
 
 const pillars = [
@@ -69,6 +69,14 @@ export default function MissionPage() {
                 <Chip>Family partnership</Chip>
                 <Chip>Confidence & independence</Chip>
               </div>
+
+              <div className="flex flex-wrap items-center gap-3">
+                <span className="h-3 w-3 rounded-full bg-sky-300" />
+                <span className="h-2.5 w-2.5 rounded-full bg-rose-300" />
+                <span className="h-4 w-4 rounded-full bg-amber-300" />
+                <span className="h-2.5 w-2.5 rounded-full bg-emerald-300" />
+                <div className="h-1 w-16 rounded-full bg-gradient-to-r from-sky-300 via-rose-300 to-amber-300" />
+              </div>
             </div>
 
             {/* Visual card */}
@@ -99,16 +107,55 @@ export default function MissionPage() {
 
       {/* Quote + body */}
       <Section>
-        <div className="grid gap-10 lg:grid-cols-[minmax(0,1.1fr)_minmax(0,0.9fr)] lg:items-start">
+        <div className="space-y-10">
           {/* Main content */}
           <div className="space-y-6 text-body text-muted-foreground">
-            {missionParagraphs.map((paragraph) => (
-              <p key={paragraph} className="max-w-prose">
-                {paragraph}
-              </p>
-            ))}
+            <div className="rounded-2xl border border-white/70 bg-gradient-to-br from-sky-50 via-white to-amber-50 p-6 shadow-sm">
+              <p className="text-label text-foreground">Our commitment</p>
+              <div className="mt-4 space-y-4">
+                {missionParagraphs.map((paragraph) => (
+                  <p key={paragraph} className="max-w-prose">
+                    {paragraph}
+                  </p>
+                ))}
+              </div>
+            </div>
 
-            <div className="rounded-md border border-border/60 bg-background/60 p-5 shadow-sm backdrop-blur">
+            <div className="grid gap-4 md:grid-cols-3">
+              {[
+                {
+                  src: "https://images.pexels.com/photos/8923042/pexels-photo-8923042.jpeg",
+                  alt: "Therapist and child working together on a learning activity",
+                },
+                {
+                  src: "https://images.pexels.com/photos/3662630/pexels-photo-3662630.jpeg",
+                  alt: "Parent and child practicing skills at a table",
+                },
+                {
+                  src: "https://images.pexels.com/photos/8617981/pexels-photo-8617981.jpeg",
+                  alt: "Therapist talking with a caregiver in a clinic setting",
+                },
+              ].map((image) => (
+                <div
+                  key={image.src}
+                  className="relative aspect-[4/3] overflow-hidden rounded-2xl border border-white/70 bg-gradient-to-br from-white via-white to-sky-50 shadow-sm"
+                >
+                  <Image
+                    src={image.src}
+                    alt={image.alt}
+                    fill
+                    sizes="(min-width: 1024px) 320px, 100vw"
+                    className="object-cover"
+                  />
+                  <div
+                    aria-hidden
+                    className="absolute inset-0 bg-gradient-to-t from-white/70 via-transparent to-transparent"
+                  />
+                </div>
+              ))}
+            </div>
+
+            <div className="rounded-2xl border border-white/70 bg-gradient-to-br from-rose-50 via-white to-sky-50 p-5 shadow-sm">
               <p className="text-label text-foreground">What this means for families</p>
               <p className="text-body-sm text-muted-foreground">
                 We will explain each step, set practical goals, and collaborate with caregivers so
@@ -127,43 +174,100 @@ export default function MissionPage() {
               </p>
             </div>
 
-            <div className="grid gap-4">
+            <div className="grid gap-4 md:grid-cols-2">
               {pillars.map(({ title, description, Icon }, idx) => (
                 <div
                   key={title}
-                  className="group relative overflow-hidden rounded-md border border-border/60 bg-card/60 p-5 shadow-sm backdrop-blur transition-transform duration-200 hover:-translate-y-0.5 hover:shadow-md"
+                  className="group relative overflow-hidden rounded-2xl border border-white/70 bg-gradient-to-br from-white via-white to-sky-50 p-5 shadow-sm transition-transform duration-200 hover:-translate-y-1"
                 >
                   <div
                     aria-hidden
-                    className={
-                      idx % 2 === 0
-                        ? "absolute inset-x-0 top-0 h-1 bg-gradient-to-r from-primary/55 to-primary/0"
-                        : "absolute inset-x-0 top-0 h-1 bg-gradient-to-r from-accent/55 to-accent/0"
-                    }
+                    className="absolute inset-0 rounded-2xl border border-dashed border-white/60"
                   />
 
-                  <div className="flex items-start gap-3">
-                    <div className="mt-0.5 flex h-10 w-10 items-center justify-center rounded-md border border-border/60 bg-primary/10 text-primary shadow-sm">
-                      <Icon className="h-5 w-5" aria-hidden />
-                    </div>
-
-                    <div className="space-y-1">
+                  <div className="relative space-y-3">
+                    <div className="flex items-center gap-3">
+                      <div
+                        className={
+                          idx % 2 === 0
+                            ? "flex h-11 w-11 items-center justify-center rounded-2xl bg-sky-100 text-sky-600"
+                            : "flex h-11 w-11 items-center justify-center rounded-2xl bg-rose-100 text-rose-600"
+                        }
+                      >
+                        <Icon className="h-5 w-5" aria-hidden />
+                      </div>
                       <p className="text-label text-foreground">{title}</p>
-                      <p className="text-body-sm text-muted-foreground">{description}</p>
                     </div>
+                    <p className="text-body-sm text-muted-foreground">{description}</p>
                   </div>
 
                   <div
                     aria-hidden
                     className={
                       idx % 2 === 0
-                        ? "pointer-events-none absolute -right-12 -bottom-12 h-40 w-40 rounded-full bg-primary/10 blur-2xl"
-                        : "pointer-events-none absolute -right-12 -bottom-12 h-40 w-40 rounded-full bg-accent/12 blur-2xl"
+                        ? "pointer-events-none absolute -right-12 -bottom-12 h-40 w-40 rounded-full bg-sky-100/60 blur-2xl"
+                        : "pointer-events-none absolute -right-12 -bottom-12 h-40 w-40 rounded-full bg-rose-100/60 blur-2xl"
                     }
                   />
                 </div>
               ))}
             </div>
+          </div>
+        </div>
+      </Section>
+
+      <Section>
+        <div className="grid gap-8 lg:grid-cols-[minmax(0,0.9fr)_minmax(0,1.1fr)] lg:items-center">
+          <div className="space-y-4">
+            <p className="text-overline">What to expect</p>
+            <h2 className="text-heading-2">A thoughtful, steady experience for families.</h2>
+            <p className="text-body text-muted-foreground">
+              We keep goals clear and care consistent. Families receive guidance, coaching, and
+              support that fits everyday life—not just the therapy session.
+            </p>
+            <div className="grid gap-3">
+              {[
+                "Clear next steps after every session",
+                "Parent coaching that fits real routines",
+                "Collaborative goal-setting with your care team",
+                "Progress updates you can understand and use",
+              ].map((item) => (
+                <div key={item} className="flex items-start gap-3">
+                  <span className="mt-1 h-2 w-2 rounded-full bg-primary/70" />
+                  <p className="text-body-sm text-muted-foreground">{item}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          <div className="grid gap-4 md:grid-cols-2">
+            {[
+              {
+                src: "https://images.pexels.com/photos/8439093/pexels-photo-8439093.jpeg",
+                alt: "Family walking together toward a building",
+              },
+              {
+                src: "https://images.pexels.com/photos/8466788/pexels-photo-8466788.jpeg",
+                alt: "Therapist supporting a child during a learning activity",
+              },
+            ].map((image) => (
+              <div
+                key={image.src}
+                className="relative aspect-[4/3] overflow-hidden rounded-2xl border border-border/60 bg-card shadow-sm"
+              >
+                <Image
+                  src={image.src}
+                  alt={image.alt}
+                  fill
+                  sizes="(min-width: 1024px) 420px, 100vw"
+                  className="object-cover"
+                />
+                <div
+                  aria-hidden
+                  className="absolute inset-0 bg-gradient-to-t from-background/55 via-transparent to-transparent"
+                />
+              </div>
+            ))}
           </div>
         </div>
       </Section>

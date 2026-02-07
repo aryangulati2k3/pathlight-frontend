@@ -119,6 +119,14 @@ export default function ServicesPage() {
             subtitle="A structured, family-centered approach delivered in clinic, at home, in school settings, and through telehealth when appropriate."
             align="left"
           />
+
+          <div className="flex flex-wrap items-center gap-3">
+            <span className="h-3 w-3 rounded-full bg-sky-300" />
+            <span className="h-2.5 w-2.5 rounded-full bg-rose-300" />
+            <span className="h-4 w-4 rounded-full bg-amber-300" />
+            <span className="h-2.5 w-2.5 rounded-full bg-emerald-300" />
+            <div className="h-1 w-16 rounded-full bg-gradient-to-r from-sky-300 via-rose-300 to-amber-300" />
+          </div>
         </div>
       </Section>
 
@@ -132,7 +140,16 @@ export default function ServicesPage() {
       />
 
       <Section id="with-you-all-the-way" variant="default">
-        <div className="space-y-8 md:space-y-10">
+        <div className="relative space-y-8 md:space-y-10">
+          <div
+            aria-hidden
+            className="pointer-events-none absolute -top-10 right-0 h-28 w-28 rounded-full bg-rose-100/70 blur-2xl"
+          />
+          <div
+            aria-hidden
+            className="pointer-events-none absolute -bottom-12 left-8 h-36 w-36 rounded-full bg-sky-100/70 blur-3xl"
+          />
+
           <SectionHeader
             eyebrow="With you all the way"
             title="A clear path from first call to ongoing care."
@@ -140,12 +157,25 @@ export default function ServicesPage() {
             align="left"
           />
 
-          <div className="grid gap-6 md:grid-cols-2">
-            {careSteps.map((step) => (
-              <div key={step.id} className="space-y-2 rounded-md border bg-card/60 p-5 shadow-sm">
-                <p className="text-label text-muted-foreground">{step.title}</p>
-                <h3 className="text-heading-4">{step.subtitle}</h3>
-                <p className="text-body-sm text-muted-foreground">{step.description}</p>
+          <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+            {careSteps.map((step, idx) => (
+              <div
+                key={step.id}
+                className="group relative overflow-hidden rounded-2xl border border-white/70 bg-gradient-to-br from-white via-white to-amber-50 p-5 shadow-sm"
+              >
+                <div
+                  aria-hidden
+                  className={
+                    idx % 2 === 0
+                      ? "pointer-events-none absolute -right-12 -bottom-12 h-40 w-40 rounded-full bg-sky-100/60 blur-2xl"
+                      : "pointer-events-none absolute -right-12 -bottom-12 h-40 w-40 rounded-full bg-rose-100/60 blur-2xl"
+                  }
+                />
+                <div className="relative space-y-2">
+                  <p className="text-label text-muted-foreground">{step.title}</p>
+                  <h3 className="text-heading-4">{step.subtitle}</h3>
+                  <p className="text-body-sm text-muted-foreground">{step.description}</p>
+                </div>
               </div>
             ))}
           </div>
