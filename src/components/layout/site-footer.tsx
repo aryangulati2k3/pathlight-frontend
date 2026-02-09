@@ -1,5 +1,6 @@
 // src/components/layout/site-footer.tsx
 import { Instagram, Linkedin, Mail } from "lucide-react";
+import Image from "next/image";
 import Link from "next/link";
 
 export interface FooterLink {
@@ -14,6 +15,8 @@ export interface FooterColumn {
 
 export interface SiteFooterProps {
   brandName: string;
+  logoSrc?: string;
+  logoAlt?: string;
   copyrightText?: string;
   columns?: FooterColumn[];
   email?: string;
@@ -29,6 +32,8 @@ export interface SiteFooterProps {
  */
 export function SiteFooter({
   brandName,
+  logoSrc,
+  logoAlt,
   copyrightText,
   columns = [],
   email,
@@ -43,7 +48,18 @@ export function SiteFooter({
           {/* Brand + contact */}
           <div className="space-y-4">
             <div>
-              <div className="text-logo">{brandName}</div>
+              <div className="flex items-center gap-3">
+                {logoSrc ? (
+                  <Image
+                    src={logoSrc}
+                    alt={logoAlt ?? `${brandName} logo`}
+                    width={40}
+                    height={40}
+                    className="h-10 w-10"
+                  />
+                ) : null}
+                <div className="text-logo">{brandName}</div>
+              </div>
               <p className="text-muted mt-2 max-w-sm text-sm">
                 Lighting the path to every child’s potential.
               </p>

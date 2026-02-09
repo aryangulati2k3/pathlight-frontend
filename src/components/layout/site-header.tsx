@@ -3,6 +3,7 @@
 
 import { Button } from "@/components/ui/button";
 import { ChevronDown, Menu, X } from "lucide-react";
+import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
 
@@ -24,6 +25,8 @@ export interface HeaderNavDropdown {
 export type HeaderNavItem = HeaderNavLink | HeaderNavDropdown;
 
 export interface SiteHeaderProps {
+  logoSrc?: string;
+  logoAlt?: string;
   logoText: string;
   navLinks?: HeaderNavItem[];
   ctaLabel?: string;
@@ -37,7 +40,14 @@ function isDropdown(link: HeaderNavItem): link is HeaderNavDropdown {
 /**
  * Top-level site header with logo, navigation and optional CTA.
  */
-export function SiteHeader({ logoText, navLinks = [], ctaLabel, ctaHref }: SiteHeaderProps) {
+export function SiteHeader({
+  logoSrc,
+  logoAlt,
+  logoText,
+  navLinks = [],
+  ctaLabel,
+  ctaHref,
+}: SiteHeaderProps) {
   const [open, setOpen] = useState(false);
   const [activeDropdown, setActiveDropdown] = useState<string | null>(null);
 
@@ -48,7 +58,17 @@ export function SiteHeader({ logoText, navLinks = [], ctaLabel, ctaHref }: SiteH
     <header className="sticky top-0 z-40 border-b bg-background/80 backdrop-blur">
       <div className="mx-auto flex h-16 w-full max-w-7xl items-center justify-between px-4 md:h-20 md:px-6">
         {/* Logo */}
-        <Link href="/" className="flex items-center gap-2">
+        <Link href="/" className="flex items-center gap-3">
+          {logoSrc ? (
+            <Image
+              src={logoSrc}
+              alt={logoAlt ?? `${logoText} logo`}
+              width={36}
+              height={36}
+              className="h-9 w-9"
+              priority
+            />
+          ) : null}
           <span className="text-logo">{logoText}</span>
         </Link>
 

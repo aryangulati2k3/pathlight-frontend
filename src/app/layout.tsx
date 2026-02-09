@@ -90,6 +90,8 @@ export default function RootLayout({
       <body className={`${fontSans.variable} ${fontDisplay.variable} antialiased`}>
         <div className="flex min-h-screen flex-col">
           <SiteHeader
+            logoSrc="/web-app-manifest-192x192.png"
+            logoAlt="Pathlight Clinic logo"
             logoText="Pathlight Clinic"
             navLinks={navLinks}
             ctaLabel="Contact us"
@@ -100,6 +102,8 @@ export default function RootLayout({
 
           <SiteFooter
             brandName="Pathlight Clinic"
+            logoSrc="/web-app-manifest-192x192.png"
+            logoAlt="Pathlight Clinic logo"
             email="support@pathlighttherapy.com"
             columns={footerColumns}
             socials={{
