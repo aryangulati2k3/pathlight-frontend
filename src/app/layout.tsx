@@ -84,6 +84,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
+      <head>
+        <meta name="apple-mobile-web-app-title" content="Pathlight Clinic" />
+      </head>
       <body className={`${fontSans.variable} ${fontDisplay.variable} antialiased`}>
         <div className="flex min-h-screen flex-col">
           <SiteHeader
