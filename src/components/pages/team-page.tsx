@@ -13,7 +13,7 @@ const founders: TeamMember[] = [
     id: "nisha-arora",
     name: "Nisha Arora",
     role: "Founder & Managing Director",
-    bio: "Nisha Arora, M.S. ABA, BCBA, brings over a decade of clinical experience and serves as the guiding force behind Pathlight Clinic’s vision. As both a behavioral practitioner and a parent, she blends deep expertise with genuine compassion—creating individualized programs that honor each child’s strengths while supporting families with evidence-based care, cultural sensitivity, and a belief that every child’s potential deserves to shine.",
+    bio: "Nisha Arora, M.S. ABA, BCBA, brings over a decade of clinical experience and serves as the guiding force behind Pathlight’s vision. As both a behavioral practitioner and a parent, she blends deep expertise with genuine compassion—creating individualized programs that honor each child’s strengths while supporting families with evidence-based care, cultural sensitivity, and a belief that every child’s potential deserves to shine.",
     // imageUrl: "/images/team/nisha.jpg",
   },
   {
@@ -94,7 +94,7 @@ export function TeamPageContent() {
             <div className="space-y-6">
               <SectionHeader
                 eyebrow="Our team"
-                title="People behind Pathlight Clinic."
+                title="People behind Pathlight Therapy."
                 subtitle="We’re a family-centered team focused on compassionate, evidence-based ABA services—delivered in clinic, at home, in school settings, and through telehealth when appropriate."
                 align="left"
               />
@@ -226,9 +226,9 @@ export function TeamPageContent() {
 
                 <div className="space-y-3 text-body-sm text-muted-foreground">
                   <p>
-                    At Pathlight Clinic, our mission is to brighten the journey for every child with
-                    autism by providing evidence-based Applied Behavior Analysis (ABA) delivered
-                    with compassion, dedication, and unwavering commitment.
+                    At Pathlight, our mission is to brighten the journey for every child with autism
+                    by providing evidence-based Applied Behavior Analysis (ABA) delivered with
+                    compassion, dedication, and unwavering commitment.
                   </p>
                   <p>
                     We blend clinical excellence with genuine care, empowering families through open

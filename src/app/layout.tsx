@@ -70,10 +70,10 @@ const footerColumns = [
 ];
 
 export const metadata: Metadata = {
-  title: "Pathlight Clinic",
+  title: "Pathlight Therapy",
   description: "Structured support for neurodivergent children and their families.",
   appleWebApp: {
-    title: "Pathlight Clinic",
+    title: "Pathlight Therapy",
   },
 };
 
@@ -85,14 +85,14 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head>
-        <meta name="apple-mobile-web-app-title" content="Pathlight Clinic" />
+        <meta name="apple-mobile-web-app-title" content="Pathlight Therapy" />
       </head>
       <body className={`${fontSans.variable} ${fontDisplay.variable} antialiased`}>
         <div className="flex min-h-screen flex-col">
           <SiteHeader
             logoSrc="/web-app-manifest-192x192.png"
-            logoAlt="Pathlight Clinic logo"
-            logoText="Pathlight Clinic"
+            logoAlt="Pathlight Therapy logo"
+            logoText="Pathlight Therapy"
             navLinks={navLinks}
             ctaLabel="Contact us"
             ctaHref="/contact"
@@ -101,9 +101,9 @@ export default function RootLayout({
           <div className="flex-1">{children}</div>
 
           <SiteFooter
-            brandName="Pathlight Clinic"
+            brandName="Pathlight Therapy"
             logoSrc="/web-app-manifest-192x192.png"
-            logoAlt="Pathlight Clinic logo"
+            logoAlt="Pathlight Therapy logo"
             email="support@pathlighttherapy.com"
             columns={footerColumns}
             socials={{

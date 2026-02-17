@@ -4,9 +4,9 @@ import { ContactInfoPanel } from "@/components/contact/contact-info-panel";
 import { Section } from "@/components/layout/section";
 
 export const metadata = {
-  title: "Contact – Pathlight Clinic",
+  title: "Contact – Pathlight Therapy",
   description:
-    "Contact Pathlight Clinic for ABA therapy enquiries, insurance questions, and client support.",
+    "Contact Pathlight for ABA therapy enquiries, insurance questions, and client support.",
 };
 
 export default function ContactPage() {

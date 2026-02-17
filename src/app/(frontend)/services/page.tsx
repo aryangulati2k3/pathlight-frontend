@@ -4,9 +4,9 @@ import { Section } from "@/components/layout/section";
 import { SectionHeader } from "@/components/layout/section-header";
 
 export const metadata = {
-  title: "Services – Pathlight Clinic",
+  title: "Services – Pathlight Therapy",
   description:
-    "Explore Pathlight Clinic ABA service offerings, including clinic-based, home and community-based, school-based, and virtual services.",
+    "Explore Pathlight ABA service offerings, including clinic-based, home and community-based, school-based, and virtual services.",
 };
 
 const highlights = [

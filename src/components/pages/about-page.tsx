@@ -72,7 +72,7 @@ export function AboutPageContent() {
             <SectionHeader
               eyebrow="About us"
               title="A clinic built by parents, guided by compassion."
-              subtitle="We created Pathlight Clinic to remove barriers, empower families, and deliver individualized ABA care that honors every child’s unique strengths."
+              subtitle="We created Pathlight to remove barriers, empower families, and deliver individualized ABA care that honors every child’s unique strengths."
               align="left"
             />
 

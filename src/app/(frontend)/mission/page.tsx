@@ -7,9 +7,8 @@ import { SectionHeader } from "@/components/layout/section-header";
 import { Chip } from "@/components/ui/chip";
 
 export const metadata = {
-  title: "Mission – Pathlight Clinic",
-  description:
-    "Learn about Pathlight Clinic’s mission to deliver compassionate, evidence-based ABA care.",
+  title: "Mission – Pathlight Therapy",
+  description: "Learn about Pathlight’s mission to deliver compassionate, evidence-based ABA care.",
 };
 
 const missionParagraphs = [

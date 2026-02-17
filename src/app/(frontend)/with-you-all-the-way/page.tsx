@@ -9,9 +9,8 @@ import { SectionHeader } from "@/components/layout/section-header";
 import { Chip } from "@/components/ui/chip";
 
 export const metadata = {
-  title: "With You All the Way – Pathlight Clinic",
-  description:
-    "Explore Pathlight Clinic’s step-by-step care journey from intake to ongoing support.",
+  title: "With You All the Way – Pathlight Therapy",
+  description: "Explore Pathlight’s step-by-step care journey from intake to ongoing support.",
 };
 
 const careSteps: Step[] = [
@@ -20,7 +19,7 @@ const careSteps: Step[] = [
     title: "Quick Start",
     subtitle: "Enrollment & Insurance Guidance",
     description:
-      "At Pathlight Clinic, we make your first steps simple and supportive. From your initial call, our team verifies your information and insurance coverage, then takes time to understand your family’s needs. This helps us match your child with the therapist who will be the best fit for your family.",
+      "At Pathlight, we make your first steps simple and supportive. From your initial call, our team verifies your information and insurance coverage, then takes time to understand your family’s needs. This helps us match your child with the therapist who will be the best fit for your family.",
     iconKey: "calendar",
   },
   {
@@ -28,7 +27,7 @@ const careSteps: Step[] = [
     title: "Comprehensive Assessment",
     subtitle: "Understanding Your Child’s Unique Profile",
     description:
-      "A Pathlight Clinic BCBA creates an individualized treatment plan utilizing empirical behavior assessment tools and also includes direct observations across settings and a detailed parent interview. Your insight matters. Together, we build a complete picture of your child’s strengths, challenges, and priorities.",
+      "A Pathlight BCBA creates an individualized treatment plan utilizing empirical behavior assessment tools and also includes direct observations across settings and a detailed parent interview. Your insight matters. Together, we build a complete picture of your child’s strengths, challenges, and priorities.",
     iconKey: "clipboard",
   },
   {
@@ -44,7 +43,7 @@ const careSteps: Step[] = [
     title: "Insurance Approval",
     subtitle: "Securing Coverage for Services",
     description:
-      "Pathlight Clinic handles the paperwork and submits your child’s care plan for insurance authorization. Our team is experienced in navigating approvals and works diligently to minimize delays. You’ll stay informed at every step.",
+      "Pathlight handles the paperwork and submits your child’s care plan for insurance authorization. Our team is experienced in navigating approvals and works diligently to minimize delays. You’ll stay informed at every step.",
     iconKey: "shield",
   },
   {
@@ -60,7 +59,7 @@ const careSteps: Step[] = [
     title: "Streamlined Care Management",
     subtitle: "Scheduling That Fits Your Life",
     description:
-      "Life is busy. That’s why Pathlight Clinic provides a dedicated care coordinator to help schedule sessions at times that work best for your family. Our goal is to make therapy accessible, consistent, and stress free.",
+      "Life is busy. That’s why Pathlight provides a dedicated care coordinator to help schedule sessions at times that work best for your family. Our goal is to make therapy accessible, consistent, and stress free.",
     iconKey: "file",
   },
 ];

@@ -11,10 +11,10 @@ import Image from "next/image";
 const heroSlides = [
   {
     id: "hero-1",
-    eyebrow: "Pathlight Clinic",
+    eyebrow: "Pathlight Therapy",
     title: "Lighting the path to every child’s potential",
     subtitle:
-      "At Pathlight Clinic, we provide compassionate, evidence based ABA therapy designed around each child’s unique strengths and needs.",
+      "At Pathlight, we provide compassionate, evidence based ABA therapy designed around each child’s unique strengths and needs.",
     primaryCtaLabel: "Start an intake",
     primaryCtaHref: "/contact",
     secondaryCtaLabel: "Explore services",
@@ -83,7 +83,7 @@ const articles: ArticleCardProps[] = [
   },
   {
     href: "/with-you-all-the-way",
-    title: "Preparing for Your First Visit to Pathlight Clinic",
+    title: "Preparing for Your First Visit to Pathlight Therapy",
     excerpt:
       "Practical tips on what to expect in your first appointment—what to bring, how sessions are structured, and how to talk to your child about visiting the clinic.",
     category: "For Parents",
@@ -179,7 +179,7 @@ export default function HomePage() {
         id="home-testimonials"
         eyebrow="Testimonials"
         title="Support that families can feel."
-        subtitle="Hear from caregivers about their experiences with Pathlight Clinic’s ABA therapy services."
+        subtitle="Hear from caregivers about their experiences with Pathlight’s ABA therapy services."
         testimonials={testimonials}
         alignHeader="center"
       />

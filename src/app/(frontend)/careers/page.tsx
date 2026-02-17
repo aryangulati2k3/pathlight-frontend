@@ -7,7 +7,7 @@ import { SectionHeader } from "@/components/layout/section-header";
 import { Chip } from "@/components/ui/chip";
 
 export const metadata = {
-  title: "Careers – Pathlight Clinic",
+  title: "Careers – Pathlight Therapy",
   description:
     "Join Pathlight Behavioral and help light the path to every child’s potential with compassionate, evidence-based ABA care.",
 };
@@ -66,17 +66,17 @@ export default function CareersPage() {
             <div className="space-y-6">
               <div className="inline-flex items-center gap-2 rounded-full bg-white/80 px-4 py-1 text-caption text-foreground shadow-sm">
                 <span className="h-2 w-2 rounded-full bg-rose-300" />
-                Careers at Pathlight Clinic
+                Careers at Pathlight Therapy
               </div>
 
               <h1 className="text-heading-1">
                 Join Us in Lighting the Path to Every Child’s Potential
               </h1>
               <p className="text-body text-muted-foreground">
-                At Pathlight Clinic, your work isn’t just a job—it’s a calling. Our mission,
-                “Lighting the path to every child’s potential,” guides everything we do. If you’re a
-                future BT or RBT looking for a place where your impact truly matters, you’ll find
-                your purpose here.
+                At Pathlight, your work isn’t just a job—it’s a calling. Our mission, “Lighting the
+                path to every child’s potential,” guides everything we do. If you’re a future BT or
+                RBT looking for a place where your impact truly matters, you’ll find your purpose
+                here.
               </p>
 
               <div className="flex flex-wrap gap-2">

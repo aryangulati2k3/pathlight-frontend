@@ -5,9 +5,9 @@ export default function NotFound() {
     <main className="flex min-h-screen items-center">
       <div className="container mx-auto max-w-6xl p-6">
         <div className="mx-auto flex max-w-2xl flex-col items-center text-center">
-          <Link href="/" aria-label="Pathlight Clinic - Home">
+          <Link href="/" aria-label="Pathlight Therapy - Home">
             <span className="mb-3 inline-flex items-center gap-2">
-              <span className="text-logo">Pathlight Clinic</span>
+              <span className="text-logo">Pathlight Therapy</span>
             </span>
           </Link>
 

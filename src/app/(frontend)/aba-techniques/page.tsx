@@ -19,9 +19,9 @@ import { SectionHeader } from "@/components/layout/section-header";
 import { Chip } from "@/components/ui/chip";
 
 export const metadata = {
-  title: "ABA Techniques – Pathlight Clinic",
+  title: "ABA Techniques – Pathlight Therapy",
   description:
-    "Explore evidence-based ABA techniques used at Pathlight Clinic to support communication, independence, and daily living skills.",
+    "Explore evidence-based ABA techniques used at Pathlight to support communication, independence, and daily living skills.",
 };
 
 type TechniqueItem = {
